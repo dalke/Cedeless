@@ -64,14 +64,17 @@ div[class*="block-"] {
   height: 10rem;
 }
 
+div[class$="-b"] {
+  background: $color-dr05-sand;
+  flex-grow: 1;
+}
+
 .block-01-a {
   background: $color-dr05-red;
   width: $w-33;
 }
 
 .block-01-b {
-  background: $color-dr05-sand;
-  flex-grow: 1;
   width: $w-66;
 }
 
@@ -85,8 +88,6 @@ div[class*="block-"] {
 }
 
 .block-02-b {
-  background: $color-dr05-sand;
-  flex-grow: 1;
   width: $w-33;
 }
 
@@ -100,8 +101,6 @@ div[class*="block-"] {
 }
 
 .block-03-b {
-  background: $color-dr05-sand;
-  flex-grow: 1;
   width: $w-50;
 }
 
@@ -111,8 +110,6 @@ div[class*="block-"] {
 }
 
 .block-04-b {
-  background: $color-dr05-sand;
-  flex-grow: 1;
   width: $w-80;
 }
 
@@ -122,8 +119,6 @@ div[class*="block-"] {
 }
 
 .block-05-b {
-  background: $color-dr05-sand;
-  flex-grow: 1;
   width: $w-20;
 }
 
@@ -133,8 +128,6 @@ div[class*="block-"] {
 }
 
 .block-06-b {
-  background: $color-dr05-sand;
-  flex-grow: 1;
   width: $w-50;
 }
 
@@ -144,8 +137,6 @@ div[class*="block-"] {
 }
 
 .block-07-b {
-  background: $color-dr05-sand;
-  flex-grow: 1;
   width: $w-33;
 }
 
@@ -155,7 +146,5 @@ div[class*="block-"] {
 }
 
 .block-08-b {
-  background: $color-dr05-sand;
-  flex-grow: 1;
   width: $w-20;
 }
