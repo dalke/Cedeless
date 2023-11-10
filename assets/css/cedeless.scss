@@ -11,13 +11,65 @@ $w-50: 49.25vw;
 $w-66: 66.16667vw;
 $w-80: 78.4vw;
 
+.light {
+  body {
+    background: $color-dr00-base;
+  }
+  h1, ul {
+    color: $color-dr00-base;
+  }
+  a:hover {
+    color: $color-dr05-orange;
+  }
+  div[class$="-b"] {
+    background: $color-dr05-sand;
+  }
+  .block-01-a, .block-06-a {
+    background: $color-dr05-red;
+  }
+  .block-02-a, .block-08-a {
+    background: $color-dr05-blue;
+  }
+  .block-03-a, .block-05-a {
+    background: $color-dr05-orange;
+  }
+  .block-04-a, .block-07-a {
+    background: $color-dr05-beige;
+  }
+}
+
+.dark {
+  body {
+    background: $color-dr05-blue;
+  }
+  h1, ul {
+    color: $color-dr00-base;
+  }
+  a:hover {
+    color: $color-dr05-red;
+  }
+  div[class$="-b"] {
+    background: $color-dr05-beige;
+  }
+  .block-01-a, .block-03-a, .block-06-a {
+    background: $color-dr05-red;
+  }
+  .block-04-a, .block-07-a {
+    background: $color-dr05-sand;
+  }
+  .block-02-a, .block-05-a, .block-08-a {
+    background: $color-dr05-orange;
+  }
+}
+
 body {
-  background: $color-dr00-base;
   overflow: hidden;
+  font-feature-settings: 'kern';
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
 }
 
 h1 {
-  color: $color-dr00-base;
   display: block;
   font-family: 'Advocate 16 Condensed Bold';
   font-feature-settings: 'case' 1, 'liga' 0;
@@ -25,12 +77,9 @@ h1 {
   line-height: 10rem;
   margin: 0 1rem;
   text-transform: uppercase;
-  -webkit-font-smoothing: auto;
-  -moz-osx-font-smoothing: auto;
 }
 
 ul {
-  color: $color-dr00-base;
   font-family: 'Equity A Caps';
   font-feature-settings: 'ss10';
   font-size: 1.5rem;
@@ -38,19 +87,15 @@ ul {
   list-style: none;
   margin: 0 1rem 0 0;
   padding: 0;
-  -webkit-font-smoothing: auto;
-  -moz-osx-font-smoothing: auto;
 }
 
 a {
   color: inherit;
   padding: 0 .25rem;
   text-decoration: none;
-}
-
-a:hover {
-  background: $color-dr05-sand;
-  color: $color-dr05-orange;
+  &:hover {
+    background: $color-dr05-sand;
+  }
 }
 
 .blocks {
@@ -65,12 +110,10 @@ div[class*="block-"] {
 }
 
 div[class$="-b"] {
-  background: $color-dr05-sand;
   flex-grow: 1;
 }
 
 .block-01-a {
-  background: $color-dr05-red;
   width: $w-33;
 }
 
@@ -80,7 +123,6 @@ div[class$="-b"] {
 
 .block-02-a {
   align-content: center;
-  background: $color-dr05-blue;
   display: flex;
   justify-content: flex-end;
   text-align: right;
@@ -93,7 +135,6 @@ div[class$="-b"] {
 
 .block-03-a {
   align-items: center;
-  background: $color-dr05-orange;
   display: flex;
   justify-content: flex-end;
   text-align: right;
@@ -105,7 +146,6 @@ div[class$="-b"] {
 }
 
 .block-04-a {
-  background: $color-dr05-beige;
   width: $w-20;
 }
 
@@ -114,7 +154,6 @@ div[class$="-b"] {
 }
 
 .block-05-a {
-  background: $color-dr05-orange;
   width: $w-80;
 }
 
@@ -123,7 +162,6 @@ div[class$="-b"] {
 }
 
 .block-06-a {
-  background: $color-dr05-red;
   width: $w-50;
 }
 
@@ -132,7 +170,6 @@ div[class$="-b"] {
 }
 
 .block-07-a {
-  background: $color-dr05-beige;
   width: $w-66;
 }
 
@@ -141,10 +178,15 @@ div[class$="-b"] {
 }
 
 .block-08-a {
-  background: $color-dr05-blue;
   width: $w-80;
 }
 
 .block-08-b {
   width: $w-20;
+}
+
+.theme-control {
+  bottom: 1rem;
+  position: absolute;
+  right: 1rem;
 }
