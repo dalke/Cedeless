@@ -2,9 +2,19 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/cedeless.css">
+    <script>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+        document.documentElement.classList.remove('light')
+      } else {
+        document.documentElement.classList.add('light')
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+    <link rel='stylesheet' href="/assets/css/cedeless.css">
   </head>
   <body>
     {{ content }}
   </body>
+  <script src="/assets/js/theme.js"></script>
 </html>
