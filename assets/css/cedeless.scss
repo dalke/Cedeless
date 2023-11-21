@@ -1,6 +1,8 @@
 ---
 ---
 
+@use 'sass:color';
+
 @import 'normalize';
 @import 'color';
 @import 'type';
@@ -19,16 +21,16 @@ $w-80: 78.4vw;
     color: $color-dr00-base;
   }
   a:hover {
-    color: $color-dr05-orange;
+    color: $color-dr05-orange-700;
   }
   div[class$="-b"] {
     background: $color-dr05-sand;
   }
   .block-02-a {
-    background: $color-dr05-blue;
+    background: $color-dr05-blue-700;
   }
   .block-05-a, .block-08-a {
-    background: $color-dr05-orange;
+    background: $color-dr05-orange-700;
   }
   .block-04-a, .block-07-a {
     background: $color-dr05-beige;
@@ -37,19 +39,19 @@ $w-80: 78.4vw;
 
 .dark {
   body {
-    background: $color-dr05-blue;
+    background: $color-dr05-blue-900;
   }
   h1, ul {
     color: $color-dr00-base;
   }
   a:hover {
-    color: $color-dr05-red;
+    color: $color-dr05-red-700;
   }
   div[class$="-b"] {
-    background: $color-dr05-beige;
+    background: $color-dr05-blue-700;
   }
   .block-02-a, .block-05-a, .block-08-a {
-    background: $color-dr05-orange;
+    background: $color-dr05-orange-700;
   }
   .block-04-a, .block-07-a {
     background: $color-dr05-sand;
@@ -109,7 +111,7 @@ div[class$="-b"] {
 }
 
 .block-01-a, .block-03-a, .block-06-a {
-  background: $color-dr05-red;
+  background: $color-dr05-red-700;
 }
 
 .block-01-a {
@@ -186,7 +188,7 @@ div[class$="-b"] {
 
 .theme-control {
   background: $color-dr00-base;
-  border: 2px solid $color-dr05-blue;
+  border: 2px solid $color-dr05-blue-700;
   bottom: 1rem;
   display: flex;
   position: absolute;
@@ -199,12 +201,12 @@ div[class$="-b"] {
     input[type="radio"] {
       display: none;
       &:checked + label {
-        background: $color-dr05-blue;
+        background: $color-dr05-blue-700;
         color: $color-dr00-base;
       }
     }
     label {
-      color: $color-dr05-blue;
+      color: $color-dr05-blue-700;
       cursor: pointer;
       display: inline-block;
       font-family: 'Equity A Caps';
@@ -242,7 +244,7 @@ div[class$="-b"] {
   }
   
   .block-01-a, .block-03-a, .block-06-a {
-    background: $color-dr05-red;
+    background: $color-dr05-red-700;
   }
   
   .block-01-a {
@@ -319,7 +321,7 @@ div[class$="-b"] {
   
   .theme-control {
     background: $color-dr00-base;
-    border: 2px solid $color-dr05-blue;
+    border: 2px solid $color-dr05-blue-700;
     bottom: 1rem;
     display: flex;
     position: absolute;
@@ -332,12 +334,12 @@ div[class$="-b"] {
       input[type="radio"] {
         display: none;
         &:checked + label {
-          background: $color-dr05-blue;
+          background: $color-dr05-blue-700;
           color: $color-dr00-base;
         }
       }
       label {
-        color: $color-dr05-blue;
+        color: $color-dr05-blue-700;
         cursor: pointer;
         display: inline-block;
         font-family: 'Equity A Caps';
