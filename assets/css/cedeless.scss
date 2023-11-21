@@ -7,11 +7,25 @@
 @import 'color';
 @import 'type';
 
-$w-20: 19.6vw;
-$w-33: 32.33333vw;
-$w-50: 49.25vw;
-$w-66: 66.16667vw;
-$w-80: 78.4vw;
+$w-20: null;
+$w-33: null;
+$w-50: null;
+$w-66: null;
+$w-80: null;
+
+@mixin width-calc($block-gap) {
+  $w-20: calc((100vw - #{$block-gap}) * .2) !global;
+  $w-33: calc((100vw - #{$block-gap}) * .33333) !global;
+  $w-50: calc((100vw - #{$block-gap}) * .5) !global;
+  $w-66: calc((100vw - #{$block-gap}) * .66667) !global;
+  $w-80: calc((100vw - #{$block-gap}) * .8) !global;
+    
+  .blocks {
+    gap: $block-gap;
+  }
+}
+
+@include width-calc($block-gap: 1vw);
 
 .light {
   body {
@@ -69,8 +83,8 @@ h1 {
   display: block;
   font-family: 'Advocate 16 Condensed Bold';
   font-feature-settings: 'case' 1, 'liga' 0;
-  font-size: 10rem;
-  line-height: 10rem;
+  font-size: 8rem;
+  line-height: 8rem;
   margin: 0 1rem;
   text-transform: uppercase;
 }
@@ -78,8 +92,8 @@ h1 {
 ul {
   font-family: 'Equity A Caps';
   font-feature-settings: 'ss10';
-  font-size: 1.5rem;
-  line-height: 1.5;
+  font-size: 1.3rem;
+  line-height: 1.3;
   list-style: none;
   margin: 0 1rem 0 0;
   padding: 0;
@@ -98,12 +112,11 @@ a {
 .blocks {
   display: flex;
   flex-wrap: wrap;
-  gap: 3vw;
   width: 100%;
 }
 
 div[class*="block-"] {
-  height: 10rem;
+  height: 8rem;
 }
 
 div[class$="-b"] {
@@ -127,11 +140,11 @@ div[class$="-b"] {
   display: flex;
   justify-content: flex-end;
   text-align: right;
-  width: $w-66;
+  width: 100vw;
 }
 
 .block-02-b {
-  width: $w-33;
+  display: none;
 }
 
 .block-03-a {
@@ -139,11 +152,11 @@ div[class$="-b"] {
   display: flex;
   justify-content: flex-end;
   text-align: right;
-  width: $w-50;
+  width: $w-80;
 }
 
 .block-03-b {
-  width: $w-50;
+  width: $w-20;
 }
 
 .block-04-a {
@@ -211,12 +224,14 @@ div[class$="-b"] {
       display: inline-block;
       font-family: 'Equity A Caps';
       font-feature-settings: 'ss10';
-      font-size: 3rem;
-      padding: 1.5rem;
+      font-size: 1.3rem;
+      padding: .7rem;
     }
   }
 }
 // End mobile/small-screen styles =========================
+@media (max-width: 639px) {
+}
 
 @media (min-width: 640px) {
 }
@@ -224,54 +239,38 @@ div[class$="-b"] {
 @media (min-width: 768px) {
 }
 
-@media (min-width: 804px) {
+@media (width: 804px) {
 }
 
 @media (min-width: 1024px) {
-  .blocks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5vw;
-    width: 100%;
+  h1 {
+    font-size: 10rem;
+    line-height: 10rem;
+  }
+  
+  ul {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .blocks, div[class*="block-"] {
+    @include width-calc($block-gap: 1.5vw);
   }
   
   div[class*="block-"] {
     height: 10rem;
   }
   
-  div[class$="-b"] {
-    flex-grow: 1;
-  }
-  
-  .block-01-a, .block-03-a, .block-06-a {
-    background: $color-dr05-red-700;
-  }
-  
-  .block-01-a {
-    width: $w-33;
-  }
-  
-  .block-01-b {
-    width: $w-66;
-  }
-  
   .block-02-a {
-    align-content: center;
-    display: flex;
-    justify-content: flex-end;
-    text-align: right;
     width: $w-66;
   }
   
   .block-02-b {
+    display: block;
     width: $w-33;
   }
   
   .block-03-a {
-    align-items: center;
-    display: flex;
-    justify-content: flex-end;
-    text-align: right;
     width: $w-50;
   }
   
@@ -279,71 +278,9 @@ div[class$="-b"] {
     width: $w-50;
   }
   
-  .block-04-a {
-    width: $w-20;
-  }
-  
-  .block-04-b {
-    width: $w-80;
-  }
-  
-  .block-05-a {
-    width: $w-80;
-  }
-  
-  .block-05-b {
-    width: $w-20;
-  }
-  
-  .block-06-a {
-    width: $w-50;
-  }
-  
-  .block-06-b {
-    width: $w-50;
-  }
-  
-  .block-07-a {
-    width: $w-66;
-  }
-  
-  .block-07-b {
-    width: $w-33;
-  }
-  
-  .block-08-a {
-    width: $w-80;
-  }
-  
-  .block-08-b {
-    width: $w-20;
-  }
-  
   .theme-control {
-    background: $color-dr00-base;
-    border: 2px solid $color-dr05-blue-700;
-    bottom: 1rem;
-    display: flex;
-    position: absolute;
-    left: 1rem;
     button[class*="theme-control-"] {
-      background: none;
-      border: none;
-      margin: 0;
-      padding: 0;
-      input[type="radio"] {
-        display: none;
-        &:checked + label {
-          background: $color-dr05-blue-700;
-          color: $color-dr00-base;
-        }
-      }
       label {
-        color: $color-dr05-blue-700;
-        cursor: pointer;
-        display: inline-block;
-        font-family: 'Equity A Caps';
-        font-feature-settings: 'ss10';
         font-size: 1rem;
         padding: .5rem;
       }
