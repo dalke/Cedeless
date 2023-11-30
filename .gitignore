@@ -8,3 +8,5 @@ vendor/
 .DS_Store
 # Ignore MB fonts
 assets/fonts/
+# Ignore Nova project config
+.nova/
