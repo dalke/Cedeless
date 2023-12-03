@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    {% include theme_read.html %}
+    <link rel='stylesheet' href="/assets/css/cedeless.css">
+    {% feed_meta %}
+  </head>
+
+  <body class="blog">
+    <header class="blog-header">
+      <div>
+        <h1>Infinite, <br>Worthless <br>Time</h1>
+        <p>An event log</p>
+      </div>
+      <ul>
+        <li><a href="/iwt/">Posts</a></li>
+        <li>About</li>
+      </ul>
+    </header>
+    
+    <div class="posts">
+      {{ content }}
+    </div>
+  </body>
+
+  {% include theme_write.html %}
+</html>
+
