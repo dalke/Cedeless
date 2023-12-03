@@ -1,20 +1,22 @@
 ---
 ---
-
 @use 'sass:color';
 
 @import 'normalize';
 @import 'color';
 @import 'type';
 
-// Not using these values, but these variables must exist anyway so they can be updated by the `width-calc` mixin. Give them reasonable values (rather than null) in case I decide to ditch the complexity of `width-calc`.
+// Not using these values, but these variables must exist anyway so they can be updated by the `width-calc` mixin. I'm giving them reasonable values (rather than null) in case I decide to ditch the complexity of `width-calc`.
 $w-20: 20vw;
 $w-33: 33.333vw;
 $w-50: 50vw;
 $w-66: 66.667vw;
 $w-80: 80vw;
 
-// Worth it? Requires redeclaring widths every time I want to adjust one for a specific breakpoint
+// Stuff to reuse
+$standard-transition: all 150ms linear;
+
+// Worth it? Requires redeclaring widths every time I want to adjust the gap
 @mixin width-calc($block-gap) {
   // Subtract gap from viewport to get slightly more accurate proportions
   $w-20: calc((100vw - #{$block-gap}) * .2) !global;
@@ -29,153 +31,381 @@ $w-80: 80vw;
   }
 }
 
-.light {
-  body {
-    background: $color-dr00-base;
-  }
-  h1, ul {
-    color: $color-dr00-base;
-  }
-  a:hover {
-    color: $color-dr05-orange-700;
-  }
-  div[class$="-b"] {
-    background: $color-dr05-sand;
-  }
-  .block-02-a {
-    background: $color-dr05-blue-700;
-  }
-  .block-05-a, .block-08-a {
-    background: $color-dr05-orange-700;
-  }
-  .block-04-a, .block-07-a {
-    background: $color-dr05-beige;
-  }
-}
-
-.dark {
-  body {
-    background: $color-dr05-blue-900;
-  }
-  h1, ul {
-    color: $color-dr00-base;
-  }
-  a:hover {
-    color: $color-dr05-red-700;
-  }
-  div[class$="-b"] {
-    background: $color-dr05-blue-700;
-  }
-  .block-02-a, .block-05-a, .block-08-a {
-    background: $color-dr05-orange-700;
-  }
-  .block-04-a, .block-07-a {
-    background: $color-dr05-sand;
-  }
-}
-
 body {
-  overflow: hidden;
   font-feature-settings: 'kern';
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
 }
 
 h1 {
-  display: block;
   font-family: 'Advocate 16 Condensed Bold';
   font-feature-settings: 'case' 1, 'liga' 0;
-  font-size: 7rem;
-  margin: 0 1rem;
-  text-transform: uppercase;
 }
 
-ul {
-  font-family: 'Equity A Caps';
-  font-feature-settings: 'ss10';
-  font-size: 1.25rem;
-  line-height: 1.5;
-  list-style: none;
-  margin: 0 .75rem 0 0;
-  padding: 0;
+.light {
+  .front {
+    background: $color-dr00-buff-100;
+    h1, ul {
+      color: $color-dr00-buff-100;
+    }
+    a:hover {
+      color: $color-dr05-orange-700;
+    }
+    div[class$="-b"] {
+      background: $color-dr05-sand;
+    }
+    .block-02-a {
+      background: $color-dr05-blue-700;
+    }
+    .block-05-a, .block-08-a {
+      background: $color-dr05-orange-700;
+    }
+    .block-04-a, .block-07-a {
+      background: $color-dr05-beige;
+    }
+  }
+  .blog {
+    background: $color-dr00-buff-150;
+    .posts {
+      background: $color-dr00-buff-100;
+      color: $color-slate-900;
+    }
+    .post-list-link {
+      &:hover {
+        color: $color-dr05-orange-700;
+      }
+    }
+    .post-header, .pagination, .post-nav {
+      border-top: 2px solid $color-dr05-sand;
+    }
+    .post-body {
+      border-top: 1px solid $color-dr05-sand;
+      blockquote, div.highlight, code {
+        background: $color-dr00-buff-150;
+      }
+      blockquote, div.highlight {
+        border-top: 1px solid $color-dr00-buff-200;
+        border-bottom: 1px solid $color-dr00-buff-200;
+      }
+    }
+    .post-body a, .post-nav a {
+      color: $color-dr05-orange-700;
+      &:hover {
+        background: $color-dr05-orange-700;
+        color: $color-dr00-buff-100;
+      }
+    }
+  }
 }
 
-a {
-  color: inherit;
-  padding: 0 .25rem;
-  text-decoration: none;
-  &:hover {
-    background: $color-dr05-sand;
+.dark {
+  .front {
+    background: $color-dr05-blue-900;
+    h1, ul {
+      color: $color-dr00-buff-100;
+    }
+    a:hover {
+      color: $color-dr05-red-700;
+    }
+    div[class$="-b"] {
+      background: $color-dr05-blue-700;
+    }
+    .block-02-a, .block-05-a, .block-08-a {
+      background: $color-dr05-orange-700;
+    }
+    .block-04-a, .block-07-a {
+      background: $color-dr05-sand;
+    }
+  }
+  .blog {
+    background: $color-dr05-blue-900;
+    .posts {
+      background: $color-dr05-blue-800;
+      color: $color-dr00-buff-100;
+    }
+    .post-list-link {
+      &:hover {
+        color: $color-dr05-blue-300;
+      }
+    }
+    .post-header, .pagination, .post-nav {
+      border-top: 2px solid $color-dr05-blue-600;
+    }
+    .post-body {
+      border-top: 1px solid $color-dr05-blue-600;
+      blockquote, div.highlight, code {
+        background: $color-dr05-blue-800;
+      }
+      blockquote, div.highlight {
+        border-top: 1px solid $color-dr05-blue-600;
+        border-bottom: 1px solid $color-dr05-blue-600;
+      }
+    }
+    .post-body a, .post-nav a {
+      color: $color-dr05-orange-300;
+      &:hover {
+        background: $color-dr05-orange-700;
+        color: $color-dr00-buff-100;
+      }
+    }
   }
 }
 
 // Base; tested down to 360px =============================
 @include width-calc($block-gap: .3rem);
 
-.blocks {
+.front {
+  overflow: hidden;
+  h1 {
+    font-family: 'Advocate 16 Condensed Bold';
+    font-size: 7rem;
+    margin: 0 1rem;
+  }
+  ul {
+    font-family: 'Valkyrie A Caps';
+    font-feature-settings: 'ss10';
+    font-size: 1.25rem;
+    line-height: 1.5;
+    list-style: none;
+    margin: 0 .75rem 0 0;
+    padding: 0;
+  }
+  a {
+    color: inherit;
+    padding: 0 .25rem;
+    text-decoration: none;
+    &:hover {
+      background: $color-dr05-sand;
+      transition: $standard-transition;
+    }
+  }
+  
+  .blocks {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  div[class*="block-"] {
+    height: 8rem;
+  }
+  
+  div[class$="-b"] {
+    flex-grow: 1;
+  }
+  
+  .block-01-a, .block-03-a, .block-06-a {
+    background: $color-dr05-red-700;
+  }
+  
+  .block-01-a {
+    width: $w-33;
+  }
+  
+  .block-02-a {
+    align-content: center;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    width: 100vw;
+  }
+  
+  .block-02-b {
+    display: none;
+  }
+  
+  .block-03-a {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    width: $w-80;
+  }
+  
+  .block-04-a {
+    width: $w-20;
+  }
+  
+  .block-05-a {
+    width: $w-80;
+  }
+  
+  .block-06-a {
+    width: $w-50;
+  }
+  
+  .block-07-a {
+    width: $w-66;
+  }
+  
+  .block-08-a {
+    width: $w-80;
+  }
+}
+
+.blog {
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
+  flex-direction: column;
+  h1 {
+    font-size: 3.25rem;
+    line-height: 2.75rem;
+    margin: 0;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .blog-header {
+    background: $color-dr05-orange-700;
+    color: $color-dr00-buff-100;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 1rem;
+    a {
+      transition: $standard-transition;
+      &:hover {
+        background: $color-dr00-buff-100;
+        color: $color-dr05-orange-700;
+        padding: 0 3px;
+        margin-right: -3px;
+      }
+    }
+    p {
+      font-family: 'Valkyrie A';
+      font-size: 1.25rem;
+      font-style: italic;
+      margin: 1rem 0 0 0;
+    }
+    ul {
+      font-family: 'Valkyrie A Caps';
+      font-feature-settings: 'ss10';
+      font-size: 1.25rem;
+      line-height: 1.5;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: right
+    }
+  }
+  .posts {
+    padding: 1rem;
+  }
+  article {
+    font-family: 'Valkyrie A';
+    font-feature-settings: 'ss01', 'liga';
+    font-size: min(22px, max(16px, 3.7vw));
+    line-height: 1.4;
+  }
+  .post-list-link {
+    transition: $standard-transition;
+  }
+  .post-header {
+    padding: 1rem 0;
 
-div[class*="block-"] {
-  height: 8rem;
-}
-
-div[class$="-b"] {
-  flex-grow: 1;
-}
-
-.block-01-a, .block-03-a, .block-06-a {
-  background: $color-dr05-red-700;
-}
-
-.block-01-a {
-  width: $w-33;
-}
-
-.block-02-a {
-  align-content: center;
-  display: flex;
-  justify-content: flex-end;
-  text-align: right;
-  width: 100vw;
-}
-
-.block-02-b {
-  display: none;
-}
-
-.block-03-a {
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-  text-align: right;
-  width: $w-80;
-}
-
-.block-04-a {
-  width: $w-20;
-}
-
-.block-05-a {
-  width: $w-80;
-}
-
-.block-06-a {
-  width: $w-50;
-}
-
-.block-07-a {
-  width: $w-66;
-}
-
-.block-08-a {
-  width: $w-80;
+    h2 {
+      font-family: 'Valkyrie A';
+      font-size: min(32px, max(24px, 4.5vw));
+      font-weight: bold;
+      line-height: 1.1;
+      margin: .5rem 0 0;
+    }
+  }
+  .post-date {
+    font-family: 'Valkyrie A Caps';
+    font-feature-settings: 'ss10';
+    font-size: 1.1rem;
+    line-height: 1rem;
+  }
+  .post-body {
+    padding-top: 1rem;
+    h3 {
+      font-family: 'Valkyrie A Caps';
+      font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+      line-height: 1.2;
+      margin: 0 0 .5rem 0;
+    }
+    h4 {
+      margin: 0 0 .5rem 0;
+    }
+    p, blockquote, li {
+      margin: 0 0 1rem 0;
+    }
+    ol, ul {
+      padding-left: 2rem;
+    }
+    a {
+      text-decoration: none;
+      transition: $standard-transition;
+    }
+    blockquote {
+      padding: 1.5rem 2rem 0.5rem 2rem;
+      font-size: 85%;
+    }
+    div.highlight {
+      margin: 0 0 1rem 0;
+      padding: 1rem;
+    }
+    pre, code {
+      font-family: 'Triplicate A Code';
+      font-feature-settings: 'ss01' 0, 'ss02' 1;
+      font-size: 90%;
+    }
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      code {
+        background: none;
+        white-space: pre-wrap;
+      }
+    }
+    code {
+      padding: 0.1rem;
+      white-space: nowrap;
+    }
+  }
+  .lead-in {
+    font-family: 'Valkyrie A Caps';
+    font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+    font-weight: bold;
+  }
+  .pagination {
+    display: flex;
+    font-family: 'Valkyrie A Caps';
+    font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+    justify-content: space-between;
+    padding-top: 1rem;
+    .newer, .page-count, .older {
+      width: 33%;
+    }
+    .newer {
+      text-align: left;
+    }
+    .page-count {
+      text-align: center;
+    }
+    .older {
+      text-align: right;
+    }
+  }
+  .post-nav {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Valkyrie A';
+    font-size: min(22px, max(16px, 3.7vw));
+    font-weight: bold;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+  .util-nowrap {
+    white-space: nowrap;
+  }
 }
 
 .theme-control {
-  background: $color-dr00-base;
+  background: $color-dr00-buff-100;
   border: 2px solid $color-dr05-blue-700;
   bottom: 1rem;
   display: flex;
@@ -190,14 +420,14 @@ div[class$="-b"] {
       display: none;
       &:checked + label {
         background: $color-dr05-blue-700;
-        color: $color-dr00-base;
+        color: $color-dr00-buff-100;
       }
     }
     label {
       color: $color-dr05-blue-700;
       cursor: pointer;
       display: inline-block;
-      font-family: 'Equity A Caps';
+      font-family: 'Valkyrie A Caps';
       font-feature-settings: 'ss10';
       font-size: 1.3rem;
       padding: .7rem;
@@ -207,115 +437,160 @@ div[class$="-b"] {
 // End base =========================
 
 @media (min-width: 640px) {
-  .block-02-a {
-    width: $w-80;
+  .front {
+    .block-02-a {
+      width: $w-80;
+    }
+    
+    .block-02-b {
+      display: block;
+    }
+    
+    .block-03-a {
+      width: $w-66;
+    }
+    
+    .block-03-b {
+      // Set a width sufficient to prevent 04-a from sliding up to row 3
+      width: $w-33;
+    }
   }
-  
-  .block-02-b {
-    display: block;
-  }
-  
-  .block-03-a {
-    width: $w-66;
-  }
-  
-  .block-03-b {
-    // Set a width sufficient to prevent 04-a from sliding up to row 3
-    width: $w-33;
+  .blog {
+    .blog-header {
+      padding: 2rem;
+    }
+    .posts {
+      padding: 2rem;
+    }
+    .post-header {
+        padding: 2rem 0;
+    }
+    .post-body {
+      padding: 2rem 0 1rem;
+    }
+    .pagination, .post-nav {
+      padding-top: 2rem;
+    }
   }
 }
 
 @media (min-width: 768px) {
   @include width-calc($block-gap: .75rem);
   
-  h1 {
-    font-size: 9rem;
-    line-height: 9rem;
+  .front {
+    h1 {
+      font-size: 9rem;
+      line-height: 9rem;
+    }
+    
+    div[class*="block-"] {
+      height: 9rem;
+    }
+    
+    // Must redeclare widths of all A blocks every time I change gap size
+    .block-01-a {
+      width: $w-33;
+    }
+    
+    .block-02-a {
+      width: $w-66;
+    }
+    
+    .block-03-a {
+      width: $w-50;
+    }
+    
+    .block-03-b {
+      // Set a width sufficient to prevent 04-a from sliding up to row 3
+      width: $w-33;
+    }
+    
+    .block-04-a {
+      width: $w-20;
+    }
+    
+    .block-05-a {
+      width: $w-80;
+    }
+    
+    .block-06-a {
+      width: $w-50;
+    }
+    
+    .block-07-a {
+      width: $w-66;
+    }
+    
+    .block-08-a {
+      width: $w-80;
+    }
   }
-  
-  div[class*="block-"] {
-    height: 9rem;
-  }
-  
-  // Must redeclare widths of all A blocks every time I change gap size
-  .block-01-a {
-    width: $w-33;
-  }
-  
-  .block-02-a {
-    width: $w-66;
-  }
-  
-  .block-03-a {
-    width: $w-50;
-  }
-  
-  .block-03-b {
-    // Set a width sufficient to prevent 04-a from sliding up to row 3
-    width: $w-33;
-  }
-  
-  .block-04-a {
-    width: $w-20;
-  }
-  
-  .block-05-a {
-    width: $w-80;
-  }
-  
-  .block-06-a {
-    width: $w-50;
-  }
-  
-  .block-07-a {
-    width: $w-66;
-  }
-  
-  .block-08-a {
-    width: $w-80;
+  .blog {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: center;
+    .blog-header {
+      flex-direction: column;
+      justify-content: flex-start;
+      ul {
+        margin: 0;
+        text-align: left;
+      }
+      a {
+        &:hover {
+          margin: 0 0 0 -3px;
+        }
+      }
+    }
+    .posts {
+      max-width: 650px;
+      width: 100%;
+    }
   }
 }
 
 @media (min-width: 1024px) {
   @include width-calc($block-gap: 1rem);
   
-  h1 {
-    font-size: 10rem;
-    line-height: 10rem;
-  }
+  .front {
+    h1 {
+      font-size: 10rem;
+      line-height: 10rem;
+    }
+    
+    ul {
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+    
+    div[class*="block-"] {
+      height: 10rem;
+    }
+    
+    // Must redeclare widths of all A blocks every time I change gap size
+    .block-01-a {
+      width: $w-33;
+    }
+    
+    .block-04-a {
+      width: $w-20;
+    }
+    
+    .block-05-a {
+      width: $w-80;
+    }
   
-  ul {
-    font-size: 1.5rem;
-    line-height: 1.5;
-  }
+    .block-06-a {
+      width: $w-50;
+    }
   
-  div[class*="block-"] {
-    height: 10rem;
-  }
+    .block-07-a {
+      width: $w-66;
+    }
   
-  // Must redeclare widths of all A blocks every time I change gap size
-  .block-01-a {
-    width: $w-33;
-  }
-  
-  .block-04-a {
-    width: $w-20;
-  }
-  
-  .block-05-a {
-    width: $w-80;
-  }
-
-  .block-06-a {
-    width: $w-50;
-  }
-
-  .block-07-a {
-    width: $w-66;
-  }
-
-  .block-08-a {
-    width: $w-80;
+    .block-08-a {
+      width: $w-80;
+    }
   }
 
   .theme-control {
