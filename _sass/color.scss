@@ -288,7 +288,10 @@ $color-rose-950:    #4c0519;
 
 // Dieter Rams palettes (https://www.presentandcorrect.com/blogs/blog/rams-palette) ----------
 
-$color-dr00-base:     #e3e4db;
+$color-dr00-buff-base: #e3e4db;
+$color-dr00-buff-100: $color-dr00-buff-base;
+$color-dr00-buff-150: color.scale($color-dr00-buff-base, $lightness: -5%);
+$color-dr00-buff-200: color.scale($color-dr00-buff-base, $lightness: -10%);
 
 // DR01
 $color-dr01-blue:     #aab7bf;
