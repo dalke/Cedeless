@@ -1,0 +1,162 @@
+- id: game_1
+  name: ActRaiser
+  vintage: 1991-11-01 00-00-00
+  status: backlog
+  copies:
+    - copy_31
+
+- id: game_96
+  name: BELOW
+  vintage: 2018-12-14 00-00-00
+  status: abandoned
+  copies:
+    - copy_142
+
+- id: game_140
+  name: Burnout Paradise
+  vintage: 2008-01-22 00-00-00
+  status: done
+  copies:
+    - copy_218
+    - copy_219
+    - copy_220
+    - copy_221
+    - copy_222
+    - copy_223
+    - copy_2006
+    - copy_224
+    - copy_225
+    - copy_226
+    - copy_227
+  favorite: true
+  
+- id: game_217
+  name: Day of the Tentacle
+  vintage: 1993-06-25 00-00-00
+  status: backlog
+  copies:
+    - copy_333
+    - copy_334
+    - copy_335
+    - copy_336
+  
+- id: game_254
+  name: Dishonored
+  vintage: 2012-10-09 00-00-00
+  status: done
+  copies:
+    - copy_383
+    - copy_384
+    - copy_385
+  
+- id: game_304
+  name: Extra Innings
+  vintage: 1991-08-09 00-00-00
+  status: done
+  copies:
+    - copy_456
+  
+- id: game_469
+  name: Hyper Light Drifter
+  vintage: 2011-12-03 00-00-00
+  status: backlog
+  copies:
+    - copy_701
+  
+- id: game_473
+  name: ICO
+  vintage: 2001-09-24 00-00-00
+  status: backlog
+  copies:
+    - copy_707
+  
+- id: game_605
+  name: "Mario Kart: Double Dash!!"
+  vintage: 2003-11-18 00-00-00
+  status: done
+  copies:
+    - copy_895
+  
+- id: game_634
+  name: "Metal Gear Solid V: The Phantom Pain"
+  vintage: 2015-09-01 00-00-00
+  status: never going to play
+  copies:
+    - copy_945
+    - copy_946
+  
+- id: game_699
+  name: Obduction
+  vintage: 2016-08-24 00-00-00
+  status: done
+  copies:
+    - copy_1027
+    - copy_1028
+  
+- id: game_715
+  name: Outer Wilds
+  vintage: 2019-05-29 00-00-00
+  status: backlog
+  copies:
+    - copy_1052
+    - copy_1053
+  favorite: true
+  
+- id: game_857
+  name: San Francisco Rush 2049
+  vintage: 2000-09-07 00-00-00
+  status: done
+  copies:
+    - copy_1261
+  
+- id: game_1089
+  name: "The Legend of Zelda: A Link to the Past"
+  vintage: 1991-11-21 00-00-00
+  status: done
+  copies:
+    - copy_1609
+    - copy_1608
+    - copy_1605
+    - copy_1604
+    - copy_1606
+    - copy_1607
+  
+- id: game_1314
+  name: Fortnite
+  vintage: 2017-07-25 00-00-00
+  status: in progress
+  copies:
+    - copy_1926
+    - copy_1927
+  
+- id: game_1333
+  name: Townscaper
+  vintage: 2021-08-26 00-00-00
+  status: done
+  copies:
+    - copy_1947
+  
+- id: game_1452
+  name: Knotwords
+  vintage: 2022-04-28 00-00-00
+  status: done
+  copies:
+    - copy_2093
+  
+- id: game_1460
+  name: PowerWash Simulator
+  vintage: 2021-05-19 00-00-00
+  status: done
+  copies:
+    - copy_2101
+    - copy_2180
+  
+- id: game_1580
+  name: Baldur's Gate 3
+  vintage: 2023-08-03 00-00-00
+  status: to investigate
+  
+- id: game_1582
+  name: Hades II
+  vintage: 
+  status: coming soon
