@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    {% include theme_write.html %}
+    <link rel='stylesheet' href="/assets/css/cedeless.css">
+  </head>
+  <body class="about">
+    <div class="about-header">
+      <div>
+        <h1>About <br>Cedeless</h1>
+      </div>
+      {% include nav_list.html %}
+    </div>
+    <div class="about-body">
+      {{ content }}
+      {% include theme_control.html %}
+    </div>
+  </body>
+</html>

@@ -65,34 +65,47 @@ h1 {
       background: $color-dr05-beige;
     }
   }
-  .blog {
+  .blog, .about, .shelf {
     background: $color-dr00-buff-150;
-    .posts {
-      background: $color-dr00-buff-100;
-      color: $color-slate-900;
-    }
-    .post-list-link {
-      &:hover {
-        color: $color-dr05-orange-700;
-      }
-    }
-    .post-header, .pagination, .post-nav {
-      border-top: 2px solid $color-dr05-sand;
-    }
-    .post-body {
-      border-top: 1px solid $color-dr05-sand;
-      blockquote, div.highlight, code {
-        background: $color-dr00-buff-150;
-      }
-      blockquote, div.highlight {
-        border-top: 1px solid $color-dr00-buff-200;
-        border-bottom: 1px solid $color-dr00-buff-200;
-      }
-    }
-    .post-body a, .post-nav a {
+  }
+  .posts {
+    background: $color-dr00-buff-100;
+    color: $color-slate-900;
+  }
+  .post-list-link {
+    &:hover {
       color: $color-dr05-orange-700;
+    }
+  }
+  .post-header, .pagination, .post-nav {
+    border-top: 2px solid $color-dr05-sand;
+  }
+  .post-body {
+    border-top: 1px solid $color-dr05-sand;
+    blockquote, div.highlight, code {
+      background: $color-dr00-buff-150;
+    }
+    blockquote, div.highlight {
+      border-top: 1px solid $color-dr00-buff-200;
+      border-bottom: 1px solid $color-dr00-buff-200;
+    }
+  }
+  .post-body a, .post-nav a {
+    color: $color-dr05-orange-700;
+    &:hover {
+      background: $color-dr05-orange-700;
+      color: $color-dr00-buff-100;
+    }
+  }
+  .about {
+    color: $color-slate-900;
+  }
+  .about-body {
+    background: $color-dr00-buff-100;
+    a {
+      color: $color-dr05-red-700;
       &:hover {
-        background: $color-dr05-orange-700;
+        background: $color-dr05-red-700;
         color: $color-dr00-buff-100;
       }
     }
@@ -120,32 +133,46 @@ h1 {
   }
   .blog {
     background: $color-dr05-blue-900;
-    .posts {
+  }
+  .posts {
+    background: $color-dr05-blue-800;
+    color: $color-dr00-buff-100;
+  }
+  .post-list-link {
+    &:hover {
+      color: $color-dr05-blue-300;
+    }
+  }
+  .post-header, .pagination, .post-nav {
+    border-top: 2px solid $color-dr05-blue-600;
+  }
+  .post-body {
+    border-top: 1px solid $color-dr05-blue-600;
+    blockquote, div.highlight, code {
       background: $color-dr05-blue-800;
+    }
+    blockquote, div.highlight {
+      border-top: 1px solid $color-dr05-blue-600;
+      border-bottom: 1px solid $color-dr05-blue-600;
+    }
+  }
+  .post-body a, .post-nav a {
+    color: $color-dr05-orange-300;
+    &:hover {
+      background: $color-dr05-orange-700;
       color: $color-dr00-buff-100;
     }
-    .post-list-link {
+  }
+  .about {
+    background: $color-dr05-blue-900;
+    color: $color-dr00-buff-100;
+  }
+  .about-body {
+    background: $color-dr05-blue-800;
+    a {
+      color: $color-dr05-red-300;
       &:hover {
-        color: $color-dr05-blue-300;
-      }
-    }
-    .post-header, .pagination, .post-nav {
-      border-top: 2px solid $color-dr05-blue-600;
-    }
-    .post-body {
-      border-top: 1px solid $color-dr05-blue-600;
-      blockquote, div.highlight, code {
-        background: $color-dr05-blue-800;
-      }
-      blockquote, div.highlight {
-        border-top: 1px solid $color-dr05-blue-600;
-        border-bottom: 1px solid $color-dr05-blue-600;
-      }
-    }
-    .post-body a, .post-nav a {
-      color: $color-dr05-orange-300;
-      &:hover {
-        background: $color-dr05-orange-700;
+        background: $color-dr05-red-700;
         color: $color-dr00-buff-100;
       }
     }
@@ -154,6 +181,13 @@ h1 {
 
 // Base; tested down to 360px =============================
 @include width-calc($block-gap: .3rem);
+
+// Ugly measure to account for shallow viewports
+@media (height < 35rem) {
+ div[class*="block-01"] {
+   display: none;
+ } 
+}
 
 .front {
   overflow: hidden;
@@ -244,7 +278,7 @@ h1 {
   }
 }
 
-.blog {
+.blog, .about, .shelf {
   display: flex;
   flex-direction: column;
   h1 {
@@ -256,183 +290,328 @@ h1 {
     color: inherit;
     text-decoration: none;
   }
-  .blog-header {
-    background: $color-dr05-orange-700;
-    color: $color-dr00-buff-100;
-    display: flex;
-    gap: 1rem;
-    justify-content: space-between;
-    padding: 1rem;
-    a {
-      transition: $standard-transition;
-      &:hover {
-        background: $color-dr00-buff-100;
-        color: $color-dr05-orange-700;
-        padding: 0 3px;
-        margin-right: -3px;
-      }
-    }
-    p {
-      font-family: 'Valkyrie A';
-      font-size: 1.25rem;
-      font-style: italic;
-      margin: 1rem 0 0 0;
-    }
-    ul {
-      font-family: 'Valkyrie A Caps';
-      font-feature-settings: 'ss10';
-      font-size: 1.25rem;
-      line-height: 1.5;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      text-align: right
-    }
-  }
-  .posts {
-    padding: 1rem;
-  }
-  article {
-    font-family: 'Valkyrie A';
-    font-feature-settings: 'ss01', 'liga';
-    font-size: min(22px, max(16px, 3.7vw));
-    line-height: 1.4;
-  }
-  .post-list-link {
+}
+.blog-header, .about-header {
+  padding: 1rem;
+  color: $color-dr00-buff-100;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  a {
     transition: $standard-transition;
-  }
-  .post-header {
-    padding: 1rem 0;
-
-    h2 {
-      font-family: 'Valkyrie A';
-      font-size: min(32px, max(24px, 4.5vw));
-      font-weight: bold;
-      line-height: 1.1;
-      margin: .5rem 0 0;
+    &:hover, &.nav-active {
+      background: $color-dr00-buff-100;
+      padding: 0 3px;
+      margin-right: -3px;
     }
   }
-  .post-date {
+  ul {
     font-family: 'Valkyrie A Caps';
     font-feature-settings: 'ss10';
-    font-size: 1.1rem;
-    line-height: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right
   }
-  .post-body {
-    padding-top: 1rem;
-    h3 {
-      font-family: 'Valkyrie A Caps';
-      font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
-      line-height: 1.2;
-      margin: 0 0 .5rem 0;
-    }
-    h4 {
-      margin: 0 0 .5rem 0;
-    }
-    p, blockquote, li {
-      margin: 0 0 1rem 0;
-    }
-    ol, ul {
-      padding-left: 2rem;
-    }
-    a {
-      text-decoration: none;
-      transition: $standard-transition;
-    }
-    blockquote {
-      padding: 1.5rem 2rem 0.5rem 2rem;
-      font-size: 85%;
-    }
-    div.highlight {
-      margin: 0 0 1rem 0;
-      padding: 1rem;
-    }
-    pre, code {
-      font-family: 'Triplicate A Code';
-      font-feature-settings: 'ss01' 0, 'ss02' 1;
-      font-size: 90%;
-    }
-    pre {
-      margin: 0;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      code {
-        background: none;
-        white-space: pre-wrap;
-      }
-    }
-    code {
-      padding: 0.1rem;
-      white-space: nowrap;
+}
+.blog-header {
+  background: $color-dr05-orange-700;
+  a {
+    &:hover, &.nav-active {
+      color: $color-dr05-orange-700;
     }
   }
-  .lead-in {
-    font-family: 'Valkyrie A Caps';
-    font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
-    font-weight: bold;
-  }
-  .pagination {
-    display: flex;
-    font-family: 'Valkyrie A Caps';
-    font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
-    justify-content: space-between;
-    padding-top: 1rem;
-    .newer, .page-count, .older {
-      width: 33%;
-    }
-    .newer {
-      text-align: left;
-    }
-    .page-count {
-      text-align: center;
-    }
-    .older {
-      text-align: right;
-    }
-  }
-  .post-nav {
-    display: flex;
-    flex-direction: column;
+  p {
     font-family: 'Valkyrie A';
-    font-size: min(22px, max(16px, 3.7vw));
-    font-weight: bold;
-    gap: 1rem;
-    padding-top: 1rem;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 1rem 0 0 0;
   }
-  .util-nowrap {
+}
+.posts {
+  padding: 1rem;
+}
+article, .about-body {
+  font-family: 'Valkyrie A';
+  font-feature-settings: 'ss01', 'liga';
+  font-size: min(22px, max(16px, 3.7vw));
+  line-height: 1.4;
+}
+.post-list-link {
+  transition: $standard-transition;
+}
+.post-header {
+  padding: 1rem 0;
+  h2 {
+    font-family: 'Valkyrie A';
+    font-size: min(32px, max(24px, 4.5vw));
+    font-weight: bold;
+    line-height: 1.1;
+    margin: .5rem 0 0;
+  }
+}
+.post-date {
+  font-family: 'Valkyrie A Caps';
+  font-feature-settings: 'ss10';
+  font-size: 1.1rem;
+  line-height: 1rem;
+}
+.post-body, .about-body {
+  p, blockquote, li {
+    margin: 0 0 1rem 0;
+  }
+  ol, ul {
+    padding-left: 2rem;
+  }
+  a {
+    text-decoration: none;
+    transition: $standard-transition;
+  }
+  pre, code {
+    font-family: 'Triplicate A Code';
+    font-feature-settings: 'ss01' 0, 'ss02' 1;
+    font-size: 90%;
+  }
+  pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    code {
+      background: none;
+      white-space: pre-wrap;
+    }
+  }
+  code {
+    padding: 0.1rem;
     white-space: nowrap;
   }
 }
-
+.post-body {
+  padding-top: 1rem;
+  h3 {
+    font-family: 'Valkyrie A Caps';
+    font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+    line-height: 1.2;
+    margin: 0 0 .5rem 0;
+  }
+  h4 {
+    margin: 0 0 .5rem 0;
+  }
+  blockquote {
+    padding: 1.5rem 2rem 0.5rem 2rem;
+    font-size: 85%;
+  }
+  div.highlight {
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+  }
+}
+.lead-in {
+  font-family: 'Valkyrie A Caps';
+  font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+  font-weight: bold;
+}
+.pagination {
+  display: flex;
+  font-family: 'Valkyrie A Caps';
+  font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+  justify-content: space-between;
+  padding-top: 1rem;
+  .newer, .page-count, .older {
+    width: 33%;
+  }
+  .newer {
+    text-align: left;
+  }
+  .page-count {
+    text-align: center;
+  }
+  .older {
+    text-align: right;
+  }
+}
+.post-nav {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Valkyrie A';
+  font-size: min(22px, max(16px, 3.7vw));
+  font-weight: bold;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+.about-header {
+  background: $color-dr05-red-700;
+  a {
+    &:hover, &.nav-active {
+      color: $color-dr05-red-700;
+    }
+  }
+}
+.about-body {
+  padding: 1rem;
+  p:first-child {
+    font-size: 1.2em;
+    margin-top: 0;
+  }
+  h2 {
+    font-family: 'Valkyrie A Caps';
+    font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+    // Emulate default browser sizing so these H2s match the blog's H3s
+    font-size: 1.17em;
+    line-height: 1.2;
+    margin: 0 0 .5rem 0;
+  }
+}
 .theme-control {
-  background: $color-dr00-buff-100;
-  border: 2px solid $color-dr05-blue-700;
+  background: $color-dr05-blue-200;
+  border: 2px solid $color-dr05-blue-500;
   bottom: 1rem;
   display: flex;
-  position: absolute;
-  left: 1rem;
-  button[class*="theme-control-"] {
+  button {
     background: none;
     border: none;
+    flex-basis: 33.333333%;
     margin: 0;
     padding: 0;
     input[type="radio"] {
       display: none;
       &:checked + label {
-        background: $color-dr05-blue-700;
+        background: $color-dr05-red-700;
         color: $color-dr00-buff-100;
       }
     }
     label {
-      color: $color-dr05-blue-700;
+      color: $color-dr05-blue-900;
       cursor: pointer;
       display: inline-block;
       font-family: 'Valkyrie A Caps';
       font-feature-settings: 'ss10';
       font-size: 1.3rem;
       padding: .7rem;
+      width: calc(100% - 1.4rem);
     }
   }
+}
+.shelf {
+  color: $color-slate-900;
+  padding: 1rem;
+  gap: 2rem;
+  h1 {
+    span {
+      border-bottom: 4px solid;
+    }
+  }
+  table {
+    display: none;
+  }
+  .closed {
+    .game-notes {
+      display: none;
+    }
+    .icon {
+      transform: rotate(0deg);
+      transition: $standard-transition;
+    }
+  }
+  .open {
+    .game-notes {
+      display: block;
+    }
+    .icon {
+      transform: rotate(90deg);
+      transition: $standard-transition;
+    }
+  }
+  a {
+    color: inherit;
+  }
+  ul {
+    padding-left: 2rem;
+    margin: 1rem 0 0;
+  }
+  .cell-game {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .name {
+    display: inline;
+    font-size: min(22px, max(16px, 3.7vw));
+    line-height: 1.1;
+    padding: 0 3px;
+    margin: 0 0 0 -3px;
+  }
+  .toggle {
+    cursor: pointer;
+    &:hover {
+      .name {
+        background: $color-orange-700;
+        box-decoration-break: clone;
+        color: $color-orange-50;
+        transition: $standard-transition;
+      }
+      .icon {
+        filter: invert(26%) sepia(60%) saturate(2235%) hue-rotate(357deg) brightness(101%) contrast(95%);
+        transition: $standard-transition;
+      }
+    }
+  }
+  .icon {
+    height: 20px;
+    filter: invert(20%) sepia(10%) saturate(1816%) hue-rotate(176deg) brightness(101%) contrast(85%);
+    margin-top: 5px;
+  }
+  .game-notes {
+    p {
+      margin: .5rem 0 0;
+    }
+  }
+  .badge {
+    border-radius: .25rem;
+    box-decoration-break: clone;
+    font-family: 'Valkyrie A Caps';
+    font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+    font-weight: bold;
+    padding: .25rem .4rem;
+    text-align: left;
+    vertical-align: baseline;
+  }
+  .status-backlog {
+      background: $color-sky-600;
+      color: $color-sky-50;
+  }
+  .status-coming-soon {
+      background: $color-amber-600;
+      color: $color-amber-50;
+  }
+  .status-done {
+      background: $color-slate-600;
+      color: $color-slate-50;
+  }
+  .status-in-progress {
+      background: $color-lime-600;
+      color: $color-lime-50;
+  }
+  .status-never-going-to-play {
+      background: $color-rose-600;
+      color: $color-rose-50;
+  }
+  .status-to-investigate {
+      background: $color-purple-600;
+      color: $color-purple-50;
+  }
+  .status-abandoned {
+      background: $color-teal-600;
+      color: $color-teal-50;
+  }
+}
+.util-hidden {
+  display: none;
+}
+.util-nowrap {
+  white-space: nowrap;
 }
 // End base =========================
 
@@ -455,21 +634,156 @@ h1 {
       width: $w-33;
     }
   }
-  .blog {
-    .blog-header {
-      padding: 2rem;
+
+  .blog-header, .about-header {
+    padding: 2rem;
+  }
+  .posts, .about-body {
+    padding: 2rem;
+  }
+  .post-header {
+      padding: 2rem 0;
+  }
+  .post-body {
+    padding: 2rem 0 1rem;
+  }
+  .pagination, .post-nav {
+    padding-top: 2rem;
+  }
+  
+  .shelf {
+    .non-table {
+      display: none;
     }
-    .posts {
-      padding: 2rem;
+    table {
+      border-collapse: collapse;
+      display: table;
+      font-size: min(22px, max(16px, 3.7vw));
+      line-height: 1.4;
+      table-layout: auto;
+      width: 100%;
     }
-    .post-header {
-        padding: 2rem 0;
+    th, td {
+      border: 1px solid;
+      padding: 1rem;
+      vertical-align: top;
     }
-    .post-body {
-      padding: 2rem 0 1rem;
+    th {
+      border-bottom: 4px solid;
+      font-family: 'Valkyrie A Caps';
+      font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+      line-height: 1.2;
+      text-align: left;
     }
-    .pagination, .post-nav {
-      padding-top: 2rem;
+    td {
+      font-family: 'Valkyrie A';
+      font-feature-settings: 'ss01', 'liga';
+      line-height: 1.4;
+      &.closed {
+        .game-notes {
+          display: none;
+        }
+        .icon {
+          transform: rotate(0deg);
+          transition: $standard-transition;
+        }
+      }
+      &.open {
+        .game-notes {
+          display: block;
+        }
+        .icon {
+          transform: rotate(90deg);
+          transition: $standard-transition;
+        }
+      }
+    }
+    tfoot {
+      td {
+        border: none;
+      }
+    }
+    a {
+      color: inherit;
+    }
+    ul {
+      padding-left: 2rem;
+      margin: 1rem 0 0;
+    }
+    .cell-game {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .name {
+      display: inline;
+      font-size: min(22px, max(16px, 3.7vw));
+      line-height: 1.1;
+      padding: 0 3px;
+      margin: 0 0 0 -3px;
+    }
+    .toggle {
+      cursor: pointer;
+      &:hover {
+        .name {
+          background: $color-orange-700;
+          box-decoration-break: clone;
+          color: $color-orange-50;
+          transition: $standard-transition;
+        }
+        .icon {
+          filter: invert(26%) sepia(60%) saturate(2235%) hue-rotate(357deg) brightness(101%) contrast(95%);
+          transition: $standard-transition;
+        }
+      }
+    }
+    .icon {
+      height: 20px;
+      filter: invert(20%) sepia(10%) saturate(1816%) hue-rotate(176deg) brightness(101%) contrast(85%);
+      margin-top: 5px;
+    }
+    .game-notes {
+      p {
+        margin: .5rem 0 0;
+      }
+    }
+    .badge {
+      border-radius: .25rem;
+      box-decoration-break: clone;
+      font-family: 'Valkyrie A Caps';
+      font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+      font-weight: bold;
+      padding: .25rem .4rem;
+      text-align: left;
+      vertical-align: baseline;
+    }
+    .status-backlog {
+        background: $color-sky-600;
+        color: $color-sky-50;
+    }
+    .status-coming-soon {
+        background: $color-amber-600;
+        color: $color-amber-50;
+    }
+    .status-done {
+        background: $color-slate-600;
+        color: $color-slate-50;
+    }
+    .status-in-progress {
+        background: $color-lime-600;
+        color: $color-lime-50;
+    }
+    .status-never-going-to-play {
+        background: $color-rose-600;
+        color: $color-rose-50;
+    }
+    .status-to-investigate {
+        background: $color-purple-600;
+        color: $color-purple-50;
+    }
+    .status-abandoned {
+        background: $color-teal-600;
+        color: $color-teal-50;
     }
   }
 }
@@ -525,27 +839,28 @@ h1 {
       width: $w-80;
     }
   }
-  .blog {
+  .blog, .about {
     align-items: flex-start;
     flex-direction: row;
     justify-content: center;
-    .blog-header {
-      flex-direction: column;
-      justify-content: flex-start;
-      ul {
-        margin: 0;
-        text-align: left;
-      }
-      a {
-        &:hover {
-          margin: 0 0 0 -3px;
-        }
+  }
+  .blog-header, .about-header {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: min(237px, 265px);
+    ul {
+      margin: 0;
+      text-align: left;
+    }
+    a {
+      &:hover, &.nav-active {
+        margin: 0 0 0 -3px;
       }
     }
-    .posts {
-      max-width: 650px;
-      width: 100%;
-    }
+  }
+  .posts, .about-body {
+    max-width: 650px;
+    width: 100%;
   }
 }
 
@@ -590,15 +905,6 @@ h1 {
   
     .block-08-a {
       width: $w-80;
-    }
-  }
-
-  .theme-control {
-    button[class*="theme-control-"] {
-      label {
-        font-size: 1rem;
-        padding: .5rem;
-      }
     }
   }
 }

@@ -1,0 +1,239 @@
+---
+title: Shelf
+layout: shelf
+permalink: /shelf/
+---
+{% assign games_sorted_alpha_by_name = site.data.games_demo | sort_natural: "name" %}
+{% assign copy_data = site.data.copies %}
+
+<h1><span>Shelf</span></h1>
+
+<div class="non-table">
+  {% for game in games_sorted_alpha_by_name %}
+    {% comment %}
+      Instantiate empty array
+    {% endcomment %}
+    {% assign copies = game.copies %}
+    {% assign game_copies = "" | split: "" %}
+    {% for item in copies %}
+        {% comment %}
+            Get list of copies associated with each game, then retrieve data for those copies from copies.yml and add it to the game_copies array
+        {% endcomment %}
+        {% assign game_copies = game_copies | push: copy_data[item] %}
+    {% endfor %}
+  
+    <div class="closed">
+      <p class="label">
+        Game
+      </p>
+      {% if copies.size %}
+        <a class="toggle">
+          <div class="cell-game">
+            <div>
+              <h2 class="name">{{ game.name | smartify }}</h2>
+              {% if copies.size > 1 %} ({{ copies.size }}){% endif %}
+            </div>
+            <div> 
+              <img src="/assets/images/icon-chevron-right-circle-fill.svg" class="icon"/>
+            </div>
+          </div>
+        </a>
+        <div class="game-notes">
+          {% comment %}
+            If there are multiple copies, format them as a list
+          {% endcomment %}
+          {% if copies.size > 1 %}
+            <ul>
+              {% for game_copy in game_copies %}
+                <li>
+                  {{ game_copy.platform }}
+                    {% if game_copy.service %}
+                      ({{ game_copy.service }})
+                    {% endif %}
+                    {% if game_copy.physical %}
+                        (Physical)
+                    {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% comment %}
+            If only one copy, skip the list formatting
+          {% endcomment %}
+          {% elsif copies.size == 1 %}
+            <p>
+              {% for game_copy in game_copies %}
+                {{ game_copy.platform }}
+                {% if game_copy.service %}
+                  ({{ game_copy.service }})
+                {% endif %}
+                {% if game_copy.physical %}
+                    (Physical)
+                {% endif %}
+              {% endfor %}
+            </p>
+          {% endif %}
+        </div>
+      {% else %}
+        <div class="cell-game">
+          <h2 class="name">{{ game.name | smartify }}</h2>
+        </div>
+      {% endif %}
+    </div>
+    <div>
+      <p class="label">
+        Vintage
+      </p>
+    </div>
+    <div>
+      <p class="label">
+        Status
+      </p>
+    </div>
+  {% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Game</th>
+            <th>Vintage</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+      {% for game in games_sorted_alpha_by_name %}
+        {% comment %}
+          Instantiate empty array
+        {% endcomment %}
+        {% assign copies = game.copies %}
+        {% assign game_copies = "" | split: "" %}
+        {% for item in copies %}
+            {% comment %}
+                Get list of copies associated with each game, then retrieve data for those copies from copies.yml and add it to the game_copies array
+            {% endcomment %}
+            {% assign game_copies = game_copies | push: copy_data[item] %}
+        {% endfor %}
+          
+        <tr>
+          <td class="closed">
+            {% comment %}
+              If a game as associated copies, display them below the name
+            {% endcomment %}
+            {% if copies.size %}
+              <a class="toggle">
+                <div class="cell-game">
+                  <div>
+                    <h2 class="name">{{ game.name | smartify }}</h2>
+                    {% if copies.size > 1 %} ({{ copies.size }}){% endif %}
+                  </div>
+                  <div> 
+                    <img src="/assets/images/icon-chevron-right-circle-fill.svg" class="icon"/>
+                  </div>
+                </div>
+              </a>
+              <div class="game-notes">
+                {% comment %}
+                  If there are multiple copies, format them as a list
+                {% endcomment %}
+                {% if copies.size > 1 %}
+                  <ul>
+                    {% for game_copy in game_copies %}
+                      <li>
+                        {{ game_copy.platform }}
+                          {% if game_copy.service %}
+                            ({{ game_copy.service }})
+                          {% endif %}
+                          {% if game_copy.physical %}
+                              (Physical)
+                          {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% comment %}
+                  If only one copy, skip the list formatting
+                {% endcomment %}
+                {% elsif copies.size == 1 %}
+                  <p>
+                    {% for game_copy in game_copies %}
+                      {{ game_copy.platform }}
+                      {% if game_copy.service %}
+                        ({{ game_copy.service }})
+                      {% endif %}
+                      {% if game_copy.physical %}
+                          (Physical)
+                      {% endif %}
+                    {% endfor %}
+                  </p>
+                {% endif %}
+              </div>
+            {% else %}
+              <div class="cell-game">
+                <h2 class="name">{{ game.name | smartify }}</h2>
+              </div>
+            {% endif %}
+          </td>
+          <td>
+            {% comment %}
+              Unreleased games will not have a vintage
+            {% endcomment %}
+            {% if game.vintage %}
+              {{ game.vintage | date: '%B %e, %Y' }}
+            {% endif %}
+          </td>
+          <td>
+            {% comment %}
+              Every game should have a status, otherwise why is it here?
+              But perform a check in case of poorly entered data.
+            {% endcomment %}
+            {% if game.status %}
+              <span class="badge status-{{ game.status | slugify }}">
+                {{ game.status | capitalize }}
+              </span>
+            {% endif %}
+          </td>
+        </tr>
+        {% comment %}
+          Close out the table with a row count
+        {% endcomment %}
+        {% if forloop.last %}
+          </tbody>
+            <tfoot>
+              <tr class="total">
+                <td colspan="4">
+                  {{ forloop.length }} game{% if forloop.length > 1 %}s{% endif %}
+                </td>
+              </tr>
+            </tfoot>
+        {% endif %}
+      {% endfor %}
+</table>
+
+<script>
+  function ready(fn) {
+    if (document.readyState !== 'loading') {
+      fn();
+      return;
+    }
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+  
+  ready(function() {
+    const toggles = document.querySelectorAll('.toggle');
+
+    Array.from(toggles).forEach(toggler => {
+      toggler.addEventListener('click', function(event) {
+        event.preventDefault();
+        toggler.parentNode.classList.toggle('closed');
+        toggler.parentNode.classList.toggle('open');
+      });
+    });
+  });
+</script>
