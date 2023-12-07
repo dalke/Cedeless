@@ -3,19 +3,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
-    <script src="/assets/js/theme_write.js"></script>
+    {% if page.url == "/about/" %}
+      <script src="/assets/js/theme_write.js"></script>
+    {% else %}
+      <script src="/assets/js/theme_read.js"></script>
+    {% endif %}
     <link rel='stylesheet' href="/assets/css/cedeless.css">
   </head>
   <body class="about">
     <div class="about-header">
       <div>
-        <h1>About <br>Cedeless</h1>
+        <h1>{{ page.title | replace: " ", " <br>"}}</h1>
       </div>
       {% include nav_list.html %}
     </div>
     <div class="about-body">
       {{ content }}
-      {% include theme_control.html %}
     </div>
   </body>
 </html>
