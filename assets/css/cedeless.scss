@@ -90,14 +90,14 @@ h1 {
       border-bottom: 1px solid $color-dr00-buff-200;
     }
   }
-  .post-body a, .post-nav a {
+  .post-body a, .post-nav a, .shelf-intro a {
     color: $color-dr05-orange-700;
     &:hover {
       background: $color-dr05-orange-700;
       color: $color-dr00-buff-100;
     }
   }
-  .about {
+  .about, .shelf {
     color: $color-slate-900;
   }
   .about-body {
@@ -108,6 +108,17 @@ h1 {
         background: $color-dr05-red-700;
         color: $color-dr00-buff-100;
       }
+    }
+  }
+  .shelf {
+    .game {
+      border-top: 1px solid $color-slate-900;
+    }
+    .icon {
+      filter: invert(20%) sepia(10%) saturate(1816%) hue-rotate(176deg) brightness(101%) contrast(85%);
+    }
+    p.total {
+      border-top: 4px solid $color-slate-900;
     }
   }
 }
@@ -156,14 +167,14 @@ h1 {
       border-bottom: 1px solid $color-dr05-blue-600;
     }
   }
-  .post-body a, .post-nav a {
+  .post-body a, .post-nav a, .shelf-intro a {
     color: $color-dr05-orange-300;
     &:hover {
       background: $color-dr05-orange-700;
       color: $color-dr00-buff-100;
     }
   }
-  .about {
+  .about, .shelf {
     background: $color-dr05-blue-900;
     color: $color-dr00-buff-100;
   }
@@ -177,18 +188,29 @@ h1 {
       }
     }
   }
+  .shelf {
+    .game {
+      border-top: 1px solid $color-dr00-buff-100;
+    }
+    .icon {
+      filter: invert(80%) sepia(10%) saturate(383%) hue-rotate(165deg) brightness(90%) contrast(91%);
+    }
+    p.total {
+      border-top: 4px solid $color-dr00-buff-100;
+    }
+  }
 }
 
-// Base; tested down to 360px =============================
+// ============================= BASE (~360px) 
 @include width-calc($block-gap: .3rem);
 
+// FRONT
 // Ugly measure to account for shallow viewports
 @media (height < 35rem) {
  div[class*="block-01"] {
    display: none;
  } 
 }
-
 .front {
   overflow: hidden;
   h1 {
@@ -214,69 +236,69 @@ h1 {
       transition: $standard-transition;
     }
   }
-  
-  .blocks {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-  
-  div[class*="block-"] {
-    height: 8rem;
-  }
-  
-  div[class$="-b"] {
-    flex-grow: 1;
-  }
-  
-  .block-01-a, .block-03-a, .block-06-a {
-    background: $color-dr05-red-700;
-  }
-  
-  .block-01-a {
-    width: $w-33;
-  }
-  
-  .block-02-a {
-    align-content: center;
-    display: flex;
-    justify-content: flex-end;
-    text-align: right;
-    width: 100vw;
-  }
-  
-  .block-02-b {
-    display: none;
-  }
-  
-  .block-03-a {
-    align-items: center;
-    display: flex;
-    justify-content: flex-end;
-    text-align: right;
-    width: $w-80;
-  }
-  
-  .block-04-a {
-    width: $w-20;
-  }
-  
-  .block-05-a {
-    width: $w-80;
-  }
-  
-  .block-06-a {
-    width: $w-50;
-  }
-  
-  .block-07-a {
-    width: $w-66;
-  }
-  
-  .block-08-a {
-    width: $w-80;
-  }
 }
+.blocks {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+div[class*="block-"] {
+  height: 8rem;
+}
+
+div[class$="-b"] {
+  flex-grow: 1;
+}
+
+.block-01-a, .block-03-a, .block-06-a {
+  background: $color-dr05-red-700;
+}
+
+.block-01-a {
+  width: $w-33;
+}
+
+.block-02-a {
+  align-content: center;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  width: 100vw;
+}
+
+.block-02-b {
+  display: none;
+}
+
+.block-03-a {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  width: $w-80;
+}
+
+.block-04-a {
+  width: $w-20;
+}
+
+.block-05-a {
+  width: $w-80;
+}
+
+.block-06-a {
+  width: $w-50;
+}
+
+.block-07-a {
+  width: $w-66;
+}
+
+.block-08-a {
+  width: $w-80;
+}
+// END FRONT
 
 .blog, .about, .shelf {
   display: flex;
@@ -291,7 +313,7 @@ h1 {
     text-decoration: none;
   }
 }
-.blog-header, .about-header {
+.blog-header, .about-header, .shelf-header {
   padding: 1rem;
   color: $color-dr00-buff-100;
   display: flex;
@@ -304,6 +326,12 @@ h1 {
       padding: 0 3px;
       margin-right: -3px;
     }
+  }
+  p {
+    font-family: 'Valkyrie A';
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 1rem 0 0 0;
   }
   ul {
     font-family: 'Valkyrie A Caps';
@@ -323,17 +351,11 @@ h1 {
       color: $color-dr05-orange-700;
     }
   }
-  p {
-    font-family: 'Valkyrie A';
-    font-size: 1.5rem;
-    font-style: italic;
-    margin: 1rem 0 0 0;
-  }
 }
 .posts {
   padding: 1rem;
 }
-article, .about-body {
+article, .about-body, .shelf-body {
   font-family: 'Valkyrie A';
   font-feature-settings: 'ss01', 'liga';
   font-size: min(22px, max(16px, 3.7vw));
@@ -441,6 +463,8 @@ article, .about-body {
   gap: 1rem;
   padding-top: 1rem;
 }
+
+// ABOUT
 .about-header {
   background: $color-dr05-red-700;
   a {
@@ -494,126 +518,163 @@ article, .about-body {
     }
   }
 }
-.shelf {
-  color: $color-slate-900;
-  padding: 1rem;
-  gap: 2rem;
-  h1 {
-    span {
-      border-bottom: 4px solid;
+// END ABOUT
+
+// SHELF
+.shelf-header {
+  background: $color-dr05-blue-700;
+  a {
+    &:hover, &.nav-active {
+      color: $color-dr05-blue-700;
     }
   }
+}
+.shelf-body {
+  padding: 1rem;
+  gap: 2rem;
   table {
     display: none;
   }
-  .closed {
-    .game-notes {
-      display: none;
-    }
-    .icon {
-      transform: rotate(0deg);
-      transition: $standard-transition;
-    }
+}
+.shelf-intro {
+  font-size: 1.2em;
+  margin-top: 0;
+}
+.non-table {
+  p {
+    margin: .5rem 0 0;
   }
-  .open {
-    .game-notes {
-      display: block;
-    }
-    .icon {
-      transform: rotate(90deg);
-      transition: $standard-transition;
-    }
+  h2 {
+    font-size: 1.3em;
   }
-  a {
-    color: inherit;
-  }
-  ul {
-    padding-left: 2rem;
-    margin: 1rem 0 0;
-  }
-  .cell-game {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  .name {
-    display: inline;
-    font-size: min(22px, max(16px, 3.7vw));
-    line-height: 1.1;
-    padding: 0 3px;
-    margin: 0 0 0 -3px;
-  }
-  .toggle {
-    cursor: pointer;
-    &:hover {
-      .name {
-        background: $color-orange-700;
-        box-decoration-break: clone;
-        color: $color-orange-50;
-        transition: $standard-transition;
-      }
-      .icon {
-        filter: invert(26%) sepia(60%) saturate(2235%) hue-rotate(357deg) brightness(101%) contrast(95%);
-        transition: $standard-transition;
-      }
-    }
-  }
-  .icon {
-    height: 20px;
-    filter: invert(20%) sepia(10%) saturate(1816%) hue-rotate(176deg) brightness(101%) contrast(85%);
-    margin-top: 5px;
-  }
-  .game-notes {
-    p {
-      margin: .5rem 0 0;
-    }
-  }
-  .badge {
-    border-radius: .25rem;
-    box-decoration-break: clone;
-    font-family: 'Valkyrie A Caps';
-    font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
-    font-weight: bold;
-    padding: .25rem .4rem;
-    text-align: left;
-    vertical-align: baseline;
-  }
-  .status-backlog {
-      background: $color-sky-600;
-      color: $color-sky-50;
-  }
-  .status-coming-soon {
-      background: $color-amber-600;
-      color: $color-amber-50;
-  }
-  .status-done {
-      background: $color-slate-600;
-      color: $color-slate-50;
-  }
-  .status-in-progress {
-      background: $color-lime-600;
-      color: $color-lime-50;
-  }
-  .status-never-going-to-play {
-      background: $color-rose-600;
-      color: $color-rose-50;
-  }
-  .status-to-investigate {
-      background: $color-purple-600;
-      color: $color-purple-50;
-  }
-  .status-abandoned {
-      background: $color-teal-600;
-      color: $color-teal-50;
+  .total {
+    padding-top: 1rem;
+    margin-top: 2rem;
   }
 }
+.game {
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+.toggle {
+  &:hover {
+    .name {
+      background: $color-orange-700;
+      color: $color-orange-50;
+    }
+    .icon {
+      // Recolor SVG using filter
+      filter: invert(26%) sepia(60%) saturate(2235%) hue-rotate(357deg) brightness(101%) contrast(95%);
+    }
+  }
+}
+.closed {
+  .game-notes {
+    display: none;
+  }
+  .icon {
+    transform: rotate(0deg);
+    transition: $standard-transition;
+  }
+}
+.open {
+  .game-notes {
+    display: block;
+  }
+  .icon {
+    transform: rotate(90deg);
+    transition: $standard-transition;
+  }
+}
+a {
+  color: inherit;
+}
+ul {
+  padding-left: 2rem;
+  margin: .5rem 0 1rem;
+}
+.cell-game {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.name {
+  display: inline;
+  font-size: 1.3em;
+  line-height: 1.1;
+  padding: 0 3px;
+  margin: 0 0 0 -3px;
+}
+.toggle {
+  cursor: pointer;
+  &:hover {
+    .name {
+      box-decoration-break: clone;        
+      transition: $standard-transition;
+    }
+    .icon {
+      transition: $standard-transition;
+    }
+  }
+}
+.icon {
+  height: 20px;
+  margin-top: 5px;
+}
+.game-notes {
+  p {
+    margin: .5rem 0 0;
+  }
+}
+.badge {
+  border-radius: .25rem;
+  box-decoration-break: clone;
+  font-family: 'Valkyrie A Caps';
+  font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+  font-weight: bold;
+  padding: .25rem .4rem;
+  text-align: left;
+  vertical-align: baseline;
+}
+.status-backlog {
+    background: $color-sky-600;
+    color: $color-sky-50;
+}
+.status-coming-soon {
+    background: $color-amber-600;
+    color: $color-amber-50;
+}
+.status-done {
+    background: $color-slate-600;
+    color: $color-slate-50;
+}
+.status-in-progress {
+    background: $color-lime-600;
+    color: $color-lime-50;
+}
+.status-never-going-to-play {
+    background: $color-rose-600;
+    color: $color-rose-50;
+}
+.status-to-investigate {
+    background: $color-purple-600;
+    color: $color-purple-50;
+}
+.status-abandoned {
+    background: $color-teal-600;
+    color: $color-teal-50;
+}
+// END SHELF
+
+// UTILS
 .util-hidden {
   display: none;
 }
 .util-nowrap {
   white-space: nowrap;
 }
-// End base =========================
+// END UTILS
+// ========================= END BASE
 
 @media (min-width: 640px) {
   .front {
@@ -635,7 +696,7 @@ article, .about-body {
     }
   }
 
-  .blog-header, .about-header {
+  .blog-header, .about-header, .shelf-header {
     padding: 2rem;
   }
   .posts, .about-body {
@@ -652,6 +713,12 @@ article, .about-body {
   }
   
   .shelf {
+    .shelf-body {
+      padding: 2rem;
+      ul {
+        margin: .5rem 0 0;
+      }
+    }
     .non-table {
       display: none;
     }
@@ -675,115 +742,16 @@ article, .about-body {
       line-height: 1.2;
       text-align: left;
     }
-    td {
-      font-family: 'Valkyrie A';
-      font-feature-settings: 'ss01', 'liga';
-      line-height: 1.4;
-      &.closed {
-        .game-notes {
-          display: none;
-        }
-        .icon {
-          transform: rotate(0deg);
-          transition: $standard-transition;
-        }
-      }
-      &.open {
-        .game-notes {
-          display: block;
-        }
-        .icon {
-          transform: rotate(90deg);
-          transition: $standard-transition;
-        }
-      }
-    }
     tfoot {
       td {
         border: none;
       }
     }
-    a {
-      color: inherit;
-    }
-    ul {
-      padding-left: 2rem;
-      margin: 1rem 0 0;
-    }
-    .cell-game {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-    }
     .name {
-      display: inline;
       font-size: min(22px, max(16px, 3.7vw));
-      line-height: 1.1;
-      padding: 0 3px;
-      margin: 0 0 0 -3px;
     }
-    .toggle {
-      cursor: pointer;
-      &:hover {
-        .name {
-          background: $color-orange-700;
-          box-decoration-break: clone;
-          color: $color-orange-50;
-          transition: $standard-transition;
-        }
-        .icon {
-          filter: invert(26%) sepia(60%) saturate(2235%) hue-rotate(357deg) brightness(101%) contrast(95%);
-          transition: $standard-transition;
-        }
-      }
-    }
-    .icon {
-      height: 20px;
-      filter: invert(20%) sepia(10%) saturate(1816%) hue-rotate(176deg) brightness(101%) contrast(85%);
-      margin-top: 5px;
-    }
-    .game-notes {
-      p {
-        margin: .5rem 0 0;
-      }
-    }
-    .badge {
-      border-radius: .25rem;
-      box-decoration-break: clone;
-      font-family: 'Valkyrie A Caps';
-      font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
-      font-weight: bold;
-      padding: .25rem .4rem;
-      text-align: left;
-      vertical-align: baseline;
-    }
-    .status-backlog {
-        background: $color-sky-600;
-        color: $color-sky-50;
-    }
-    .status-coming-soon {
-        background: $color-amber-600;
-        color: $color-amber-50;
-    }
-    .status-done {
-        background: $color-slate-600;
-        color: $color-slate-50;
-    }
-    .status-in-progress {
-        background: $color-lime-600;
-        color: $color-lime-50;
-    }
-    .status-never-going-to-play {
-        background: $color-rose-600;
-        color: $color-rose-50;
-    }
-    .status-to-investigate {
-        background: $color-purple-600;
-        color: $color-purple-50;
-    }
-    .status-abandoned {
-        background: $color-teal-600;
-        color: $color-teal-50;
+    tr.total {
+      border: none;
     }
   }
 }
@@ -839,15 +807,15 @@ article, .about-body {
       width: $w-80;
     }
   }
-  .blog, .about {
+  .blog, .about, .shelf {
     align-items: flex-start;
     flex-direction: row;
     justify-content: center;
   }
-  .blog-header, .about-header {
+  .blog-header, .about-header, .shelf-header {
     flex-direction: column;
     justify-content: flex-start;
-    width: min(237px, 265px);
+    width: min(237px, max(265px, 33%));
     ul {
       margin: 0;
       text-align: left;
@@ -859,8 +827,12 @@ article, .about-body {
     }
   }
   .posts, .about-body {
-    max-width: 650px;
     width: 100%;
+    max-width: 650px;
+  }
+  .shelf-body {
+    width: 100%;
+    max-width: 900px;
   }
 }
 
