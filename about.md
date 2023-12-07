@@ -34,13 +34,11 @@ Blogs and content sites are good personal web development projects, because they
 
 ## What is Shelf?
 
-[Shelf](/shelf/) is a tool for keeping track of my video game library. It is very much a work a progress.
+[Shelf](/shelf/) is a tool for keeping track of my video game library. I have an Airtable base that performs this function admirably, but I wanted to try my hand at creating something on my own.
 
-Over the years, I've bought charity bundles containing dozens of PC games, claimed free games from console subscription services, and 1
+Shelf is a simple table with [a surprising degree of underlying complexity](https://github.com/dalke/Cedeless/blob/main/shelf.html). I have plans to make it more than that, but progress is slow.
 
-My current solution for this is broken into two parts. The first is a simple and crude single-page application (not public because it stores API keys as Javascript variables) that accepts the name of a game as a search term, queries an external data source for that term (currently the [Giant Bomb API](https://www.giantbomb.com/api/documentation/), but I'm considering switching to [IGDB](https://api-docs.igdb.com/#getting-started)), retrieves and displays information about the results, then passes that information to an Airtable base via Airtable's API.
-
-For example... TKTKTK
+Keeping track of my games is something [I think about a lot](shelf/).
 
 ## So did Copilot make all this or what? 
 
@@ -50,10 +48,12 @@ Nope. I did not use any large-language-model tools in the development of this si
 
 This site is powered by a local installation of [Jekyll](https://jekyllrb.com/). Jekyll parses Markdown, compiles Sass, processes control-flow blocks, and produces a directory of HTML, CSS, and JS files that I basically just FTP to a server.
 
-I'm using Matthew Butterick's [Valkyrie](https://mbtype.com/fonts/valkyrie/) and [Advocate](https://mbtype.com/fonts/advocate/) typefaces.
+I'm using Matthew Butterick's [Valkyrie](https://mbtype.com/fonts/valkyrie/), [Advocate](https://mbtype.com/fonts/advocate/), and [Triplicate](https://mbtype.com/fonts/triplicate/) typefaces.
 
 Colors are derived from [these Dieter Rams palettes](https://www.presentandcorrect.com/blogs/blog/rams-palette) collected by Chad Ashley.
 
 ## Theme control
 
 By default, this site will match your operating system's theme. You can override that behavior here. The setting is stored in your browser's local storage.
+
+{% include theme_control.html %}
