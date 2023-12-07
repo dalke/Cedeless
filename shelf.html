@@ -3,11 +3,20 @@ title: Shelf
 layout: shelf
 permalink: /shelf/
 ---
+<p class="shelf-intro">
+  Shelf is a tool for keeping track of my library of video games. I have a lot of thoughts about how to do that, so I wrote <a href="/about/shelf/">some of them</a> down.
+</p>
+  
 {% assign games_sorted_alpha_by_name = site.data.games_demo | sort_natural: "name" %}
 {% assign copy_data = site.data.copies %}
 
-<h1><span>Shelf</span></h1>
+{% comment %}
+  Would obviously prefer one layout that would serve for both mobile and larger screens. Could just do a scroll-on-X-axis table, but that's no fun.
+{% endcomment %}
 
+{% comment %}
+  Non-table for mobile
+{% endcomment %}
 <div class="non-table">
   {% for game in games_sorted_alpha_by_name %}
     {% comment %}
@@ -21,85 +30,105 @@ permalink: /shelf/
         {% endcomment %}
         {% assign game_copies = game_copies | push: copy_data[item] %}
     {% endfor %}
-  
-    <div class="closed">
-      <p class="label">
-        Game
-      </p>
-      {% if copies.size %}
-        <a class="toggle">
-          <div class="cell-game">
-            <div>
-              <h2 class="name">{{ game.name | smartify }}</h2>
-              {% if copies.size > 1 %} ({{ copies.size }}){% endif %}
+    <div class="game">
+      <div class="closed">
+        {% if copies.size %}
+          <a class="toggle">
+            <div class="cell-game">
+              <div>
+                <h2 class="name">{{ game.name | smartify }}</h2>
+                {% if copies.size > 1 %} ({{ copies.size }}){% endif %}
+              </div>
+              <div> 
+                <img src="/assets/images/icon-chevron-right-circle-fill.svg" class="icon"/>
+              </div>
             </div>
-            <div> 
-              <img src="/assets/images/icon-chevron-right-circle-fill.svg" class="icon"/>
-            </div>
-          </div>
-        </a>
-        <div class="game-notes">
-          {% comment %}
-            If there are multiple copies, format them as a list
-          {% endcomment %}
-          {% if copies.size > 1 %}
-            <ul>
-              {% for game_copy in game_copies %}
-                <li>
+          </a>
+          <div class="game-notes">
+            {% comment %}
+              If there are multiple copies, format them as a list
+            {% endcomment %}
+            {% if copies.size > 1 %}
+              <ul>
+                {% for game_copy in game_copies %}
+                  <li>
+                    {{ game_copy.platform }}
+                      {% if game_copy.service %}
+                        ({{ game_copy.service }})
+                      {% endif %}
+                      {% if game_copy.physical %}
+                          (Physical)
+                      {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% comment %}
+              If only one copy, skip the list formatting
+            {% endcomment %}
+            {% elsif copies.size == 1 %}
+              <p>
+                {% for game_copy in game_copies %}
                   {{ game_copy.platform }}
-                    {% if game_copy.service %}
-                      ({{ game_copy.service }})
-                    {% endif %}
-                    {% if game_copy.physical %}
-                        (Physical)
-                    {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-          {% comment %}
-            If only one copy, skip the list formatting
-          {% endcomment %}
-          {% elsif copies.size == 1 %}
-            <p>
-              {% for game_copy in game_copies %}
-                {{ game_copy.platform }}
-                {% if game_copy.service %}
-                  ({{ game_copy.service }})
-                {% endif %}
-                {% if game_copy.physical %}
-                    (Physical)
-                {% endif %}
-              {% endfor %}
-            </p>
-          {% endif %}
+                  {% if game_copy.service %}
+                    ({{ game_copy.service }})
+                  {% endif %}
+                  {% if game_copy.physical %}
+                      (Physical)
+                  {% endif %}
+                {% endfor %}
+              </p>
+            {% endif %}
+          </div>
+        {% else %}
+          <div class="cell-game">
+            <h2 class="name">{{ game.name | smartify }}</h2>
+          </div>
+        {% endif %}
+      </div>
+      {% comment %}
+        Unreleased games will not have a vintage
+      {% endcomment %}
+      {% if game.vintage %}
+        <div>
+          <p>
+            <span class="lead-in">
+              Vintage:
+            </span> 
+            {{ game.vintage | date: '%B %e, %Y' }}
+          </p>
         </div>
-      {% else %}
-        <div class="cell-game">
-          <h2 class="name">{{ game.name | smartify }}</h2>
+      {% endif %}
+      {% comment %}
+        Every game should have a status, otherwise why is it here?
+        But perform a check in case of poorly entered data.
+      {% endcomment %}
+      {% if game.status %}
+        <div>
+          <p>
+            <span class="lead-in">
+              Status:
+            </span> 
+            <span class="badge status-{{ game.status | slugify }}">
+              {{ game.status | capitalize }}
+            </span>
+          </p>
         </div>
       {% endif %}
     </div>
-    <div>
-      <p class="label">
-        Vintage
+    {% comment %}
+      Close out with a count
+    {% endcomment %}
+    {% if forloop.last %}
+      <p class="total">
+        {{ forloop.length }} game{% if forloop.length > 1 %}s{% endif %}
       </p>
-    </div>
-    <div>
-      <p class="label">
-        Status
-      </p>
-    </div>
+    {% endif %}
   {% endfor %}
 </div>
 
-
-
-
-
-
-
-
-
+{% comment %}
+  Table for larger displays
+{% endcomment %}
 <table>
     <thead>
         <tr>
@@ -185,7 +214,11 @@ permalink: /shelf/
               Unreleased games will not have a vintage
             {% endcomment %}
             {% if game.vintage %}
-              {{ game.vintage | date: '%B %e, %Y' }}
+              {% comment %}
+                Keep month and day on the same line
+              {% endcomment %}
+              <span class="util-nowrap">{{ game.vintage | date: '%B %e' }}, </span>
+              <span>{{ game.vintage | date: '%Y' }}</span>
             {% endif %}
           </td>
           <td>
@@ -215,25 +248,3 @@ permalink: /shelf/
         {% endif %}
       {% endfor %}
 </table>
-
-<script>
-  function ready(fn) {
-    if (document.readyState !== 'loading') {
-      fn();
-      return;
-    }
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-  
-  ready(function() {
-    const toggles = document.querySelectorAll('.toggle');
-
-    Array.from(toggles).forEach(toggler => {
-      toggler.addEventListener('click', function(event) {
-        event.preventDefault();
-        toggler.parentNode.classList.toggle('closed');
-        toggler.parentNode.classList.toggle('open');
-      });
-    });
-  });
-</script>

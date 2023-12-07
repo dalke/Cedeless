@@ -4,9 +4,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
     <script src="/assets/js/theme_read.js"></script>
+    <script src="/assets/js/shelf_toggle.js"></script>
     <link rel='stylesheet' href="/assets/css/cedeless.css">
   </head>
-  <body class="shelf">    
-    {{ content }}
+  <body class="shelf">
+    <header class="shelf-header">
+      <div>
+        <h1><span>Shelf</span></h1>
+        <p>A giant list of video games</p>
+      </div>
+      {% include nav_list.html %}
+    </header>
+    <div class="shelf-body">
+      {{ content }}
+    </div>
   </body>
 </html>
