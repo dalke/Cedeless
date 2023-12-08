@@ -381,7 +381,7 @@ Longtime Oiler who bounced around a bit toward the end of his career. Actually t
 
 ### #95: André Burakovsky
 
-Key secondary scoring during the 2022 Cup run (and the two season prior).
+Key secondary scoring during the 2022 Cup run (and the two seasons prior).
 
 ### #96: Mikko Rantanen
 
