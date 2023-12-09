@@ -305,7 +305,7 @@ The only Avalanche player to ever wear 64. Former first overall draft pick with 
 
 Keaton Middleton wore #67 in 2021, and Cal Burke wore #68 for the two games he played in 2022—23. Neither are memorable.
 
-## #70: Sam Malinski
+### #70: Sam Malinski
 
 This would be another "no one" if not for the games Malinksi has played in the past few days.
 
