@@ -6,7 +6,7 @@ permalink: /about/
 
 Cedeless is the personal project site of Reuben Dalke. That's me. Hi.
 
-This isn't a [résumé site](https://resume.reubendalke.com), but it exists in public largely to demonstrate my ability to build web pages. If I didn't need to appeal to potential employers, all this stuff would be running on `localhost`.
+This isn't a [résumé site](https://reubendalke.com/resume/), but it exists in public largely to demonstrate my ability to build web pages. If I didn't need to appeal to potential employers, all this stuff would be running on `localhost`.
 
 ## Who do you think you are, [putting on such airs](https://achewood.com/2004/02/18/title.html)?
 
