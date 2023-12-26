@@ -19559,7 +19559,7 @@ copy_2186:
     children       :
 
 copy_2187:
-    name           : "Star Wars: Empure at War"
+    name           : "Star Wars: Empire at War"
     platform       : PC
     physical       :
     service        : Steam
@@ -20325,6 +20325,105 @@ copy_2273:
 
 copy_2274:
     name           : Kingdom Rush Frontiers
+    platform       : PC
+    physical       :
+    service        : Steam
+    compatibility  :
+    parent         :
+    children       :
+
+copy_2275:
+    name           : SteamWorld Build
+    platform       : PC
+    physical       :
+    service        : Game Pass
+    compatibility  :
+    parent         :
+    children       :
+
+copy_2276:
+    name           : The Talos Principle II
+    platform       : PC
+    physical       :
+    service        : Steam
+    compatibility  :
+    parent         :
+    children       :
+
+copy_2277:
+    name           : A Highland Song
+    platform       : PC
+    physical       :
+    service        : Steam
+    compatibility  :
+    parent         :
+    children       :
+
+copy_2278:
+    name           : Against the Storm
+    platform       : PC
+    physical       :
+    service        : Steam
+    compatibility  :
+    parent         :
+    children       :
+
+copy_2279:
+    name           : Indiana Jones and the Last Crusade: The Graphic Adventure
+    platform       : PC
+    physical       :
+    service        : Steam
+    compatibility  :
+    parent         :
+    children       :
+
+copy_2280:
+    name           : Boomerang X
+    platform       : PC
+    physical       :
+    service        : Steam
+    compatibility  :
+    parent         :
+    children       :
+
+copy_2281:
+    name           : "The Expanse: A Telltale Series"
+    platform       : PC
+    physical       :
+    service        : Steam
+    compatibility  :
+    parent         :
+    children       :
+
+copy_2282:
+    name           : Tape to Tape
+    platform       : PC
+    physical       :
+    service        : Steam
+    compatibility  :
+    parent         :
+    children       :
+
+copy_2283:
+    name           : Pathologic 2
+    platform       : PC
+    physical       :
+    service        : Steam
+    compatibility  :
+    parent         :
+    children       :
+
+copy_2284:
+    name           : Mars First Logistics
+    platform       : PC
+    physical       :
+    service        : Steam
+    compatibility  :
+    parent         :
+    children       :
+
+copy_2285:
+    name           : The Entropy Centre
     platform       : PC
     physical       :
     service        : Steam
