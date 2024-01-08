@@ -20369,7 +20369,7 @@ copy_2278:
     children       :
 
 copy_2279:
-    name           : Indiana Jones and the Last Crusade: The Graphic Adventure
+    name           : "Indiana Jones and the Last Crusade: The Graphic Adventure"
     platform       : PC
     physical       :
     service        : Steam
