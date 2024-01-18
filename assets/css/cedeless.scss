@@ -618,6 +618,7 @@ ul {
   &:hover {
     .name {
       box-decoration-break: clone;        
+      -webkit-box-decoration-break: clone;        
       transition: $standard-transition;
     }
     .icon {
@@ -637,6 +638,7 @@ ul {
 .badge {
   border-radius: .25rem;
   box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
   font-family: 'Valkyrie A Caps';
   font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
   font-weight: bold;
