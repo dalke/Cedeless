@@ -205,6 +205,8 @@ Apologies to Pavel Francouz, who deserves this slot far more than Galiardi does.
 
 Scoring two goals in Game 7 of the Stanley Cup Final will make you pretty memorable. I could watch [this one](https://www.youtube.com/watch?v=JfJmtsxuU48) forever.
 
+EDIT 2024-02-28: Whoops, that one's from Game 5 (says it right in the title), which the Avalanche lost 4–1. But still: slapshots on the rush are sweet.
+
 ### #41: Craig Anderson
 
 Anderson was in Colorado for one full season and part of another, but his Game 3 shutout of the Sharks in the 2010 quarterfinals—and the [crowd reaction to him being named first star](https://www.youtube.com/watch?v=2-06bXkPaQE)—was pretty memorable.
