@@ -205,7 +205,7 @@ Apologies to Pavel Francouz, who deserves this slot far more than Galiardi does.
 
 Scoring two goals in Game 7 of the Stanley Cup Final will make you pretty memorable. I could watch [this one](https://www.youtube.com/watch?v=JfJmtsxuU48) forever.
 
-EDIT 2024-02-28: Whoops, that one's from Game 5 (says it right in the title), which the Avalanche lost 4–1. But still: slapshots on the rush are sweet.
+<span class="lead-in">EDIT 2024-02-28:</span> Whoops, that one's from Game 5 (says it right in the title), which the Avalanche lost 4–1. But still: slapshots on the rush are sweet.
 
 ### #41: Craig Anderson
 
