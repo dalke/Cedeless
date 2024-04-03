@@ -131,7 +131,7 @@ Steady defenseman on the 1996 and 2001 Cup teams.
 
 ### #25: Chris Stewart
 
-Stewart was an up-and-coming power forward in 2009-10. Early the next season, he broke his hand in a fight. Three months later, he was traded to St. Louis in the Erik Johnson deal. I liked Stewart, so I didn't like that trade. But it worked out well for the Avalanche.
+Stewart was an up-and-coming power forward in 2009–10. Early the next season, he broke his hand in a fight. Three months later, he was traded to St. Louis in the Erik Johnson deal. I liked Stewart, so I didn't like that trade. But it worked out well for the Avalanche.
 
 <span class="lead-in">Runner-up:</span> Logan O'Connor should be the #25 I remember. More recent and more important to the team's success, at least directly.
 
@@ -285,7 +285,7 @@ Highly regarded college free agent signing who has yet to make a compelling case
 
 ### #60: José Théodore
 
-A putative #1 goalie who was fine but not great as the Avs descended into mediocrity in mid-aughts.
+A putative #1 goalie who was fine but not great as the Avs descended into mediocrity in the mid-aughts.
 
 ### #61: Martin Kaut
 
@@ -305,7 +305,7 @@ The only Avalanche player to ever wear 64. Former first overall draft pick with 
 
 ### #65–69: No one
 
-Keaton Middleton wore #67 in 2021, and Cal Burke wore #68 for the two games he played in 2022—23. Neither are memorable.
+Keaton Middleton wore #67 in 2021, and Cal Burke wore #68 for the two games he played in 2022–23. Neither are memorable.
 
 ### #70: Sam Malinski
 
@@ -321,7 +321,7 @@ Recent depth forward. Was only with the team for two seasons before being select
 
 ### #73-76: No one
 
-Sampo Ranta wore #75 in 2022—23, but didn't stick in the NHL.
+Sampo Ranta wore #75 in 2022–23, but didn't stick in the NHL.
 
 ### #77: Ray Bourque
 
