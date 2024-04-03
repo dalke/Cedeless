@@ -1,6 +1,6 @@
 ---
 layout: blog_post
-title: The 2022-23 Colorado Avalanche
+title: The 2022–23 Colorado Avalanche
 ---
 
 I'm writing this the day after the Colorado Avalanche lost Game 5 of their first-round playoff series against the Seattle Kraken, and the day before they face elimination in Game 6.
