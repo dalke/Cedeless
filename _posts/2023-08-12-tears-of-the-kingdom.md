@@ -1,6 +1,7 @@
 ---
 layout: blog_post
 title: "Zelda Project: Tears of the Kingdom"
+page_class: blog
 ---
 
 <span class="lead-in">Game:</span> The Legend of Zelda: Tears of the Kingdom (2023)

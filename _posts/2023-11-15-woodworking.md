@@ -1,6 +1,7 @@
 ---
 layout: blog_post
 title: Woodworking
+page_class: blog
 ---
 
 I set a goal for myself to take three woodworking classes in 2023, and I ended up taking six. I made two bowls, a platter, a bottle stopper, a desk shelf, an end table, and a small cabinet.

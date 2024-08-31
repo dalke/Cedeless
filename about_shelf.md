@@ -1,6 +1,7 @@
 ---
 title: About Shelf
 layout: about
+page_class: about
 permalink: /about/shelf/
 ---
 

@@ -1,23 +1,14 @@
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <script src="/assets/js/theme_read.js"></script>
-    <script src="/assets/js/shelf_toggle.js"></script>
-    <link rel='stylesheet' href="/assets/css/cedeless.css">
-    {% include favicon.html %}
-  </head>
-  <body class="shelf">
-    <header class="shelf-header">
-      <div>
-        <h1><span>Shelf</span></h1>
-        <p>A giant list of video games</p>
-      </div>
-      {% include nav_list.html %}
-    </header>
-    <div class="shelf-body">
-      {{ content }}
-    </div>
-  </body>
-</html>
+---
+layout: main
+---
+
+<header class="shelf-header">
+  <div>
+    <h1>{{ page.title }}</h1>
+    <p>A giant list of video games</p>
+  </div>
+</header>
+<main class="shelf-body">
+  {{ content }}
+</main>
+{% include _footer.html %}

@@ -1,24 +1,14 @@
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <script src="/assets/js/theme_read.js"></script>
-    <link rel='stylesheet' href="/assets/css/cedeless.css">
-    {% include favicon.html %}
-    {% feed_meta %}
-  </head>
-  <body class="blog">
-    <header class="blog-header">
-      <div>
-        <h1>Infinite, <br>Worthless <br>Time</h1>
-        <p>Notes from a temporary retirement</p>
-      </div>
-      {% include nav_list.html %}
-    </header>
-    <div class="posts">
-      {{ content }}
-    </div>
-  </body>
-</html>
+---
+layout: main
+---
 
+<header class="blog-header">
+  <div>
+    <h1>Infinite, <br>Worthless <br>Time</h1>
+    <p>Notes from a temporary retirement</p>
+  </div>
+</header>
+<main class="blog-body">
+  {{ content }}
+</main>
+{% include _footer.html %}
