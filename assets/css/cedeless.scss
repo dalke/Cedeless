@@ -21,26 +21,12 @@ body {
   background: $color-slate-100;
   color: $color-slate-900;
   .front {
-    h1, ul {
-      color: $color-slate-700;
-    }
     .highlight {
       background: $color-slate-200;
     }
     a:hover {
       color: $color-slate-100;
     }
-  }
-  .post-list {
-    // color: $color-slate-900;
-  }
-  .post-list-link {
-    &:hover {
-      color: $color-slate-400;
-    }
-  }
-  article, .pagination, .post-nav {
-    // color: $color-slate-900;
   }
   .post-body {
     blockquote, div.highlight, code {
@@ -57,9 +43,6 @@ body {
       background: $color-dr05-orange-700;
       color: $color-slate-100;
     }
-  }
-  .about, .shelf {
-    // color: $color-slate-900;
   }
   .about-body {
     a {
@@ -88,20 +71,9 @@ body {
   background: $color-slate-700;
   color: $color-slate-100;
   .front {
-    h1, ul {
-      // color: $color-slate-100;
-    }
     .highlight {
       background: $color-slate-600;
     }
-  }
-  .post-list-link {
-    &:hover {
-      color: $color-slate-400;
-    }
-  }
-  article, .pagination, .post-nav {
-    // color: $color-slate-100;
   }
   .post-body {
     blockquote, div.highlight, code {
@@ -119,9 +91,6 @@ body {
       background: $color-dr05-orange-700;
       color: $color-slate-100;
     }
-  }
-  .about, .shelf {
-    // color: $color-slate-100;
   }
   .about-body {
     a {
@@ -179,7 +148,6 @@ footer {
     transition: $standard-transition;
     &:hover, &.nav-active {
       background: $color-slate-600;
-      // padding: 0 .25rem;
     }
   }
   ul {
@@ -259,6 +227,9 @@ footer {
   .post-list-link {
     padding: 0;
     transition: $standard-transition;
+    &:hover {
+      color: $color-slate-400;
+    }
   }
 }
 article {
