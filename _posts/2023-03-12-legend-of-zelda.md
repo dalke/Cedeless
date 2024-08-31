@@ -1,6 +1,7 @@
 ---
 layout: blog_post
 title: "Zelda Project: Legend of Zelda"
+page_class: blog
 ---
 
 <span class="lead-in">Game:</span> The Legend of Zelda (1986)

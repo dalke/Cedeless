@@ -6,30 +6,9 @@
 @import 'color';
 @import 'type';
 
-// Not using these values, but these variables must exist anyway so they can be updated by the `width-calc` mixin. I'm giving them reasonable values (rather than null) in case I decide to ditch the complexity of `width-calc`.
-$w-20: 20vw;
-$w-33: 33.333vw;
-$w-50: 50vw;
-$w-66: 66.667vw;
-$w-80: 80vw;
-
 // Stuff to reuse
 $standard-transition: all 150ms linear;
-
-// Worth it? Requires redeclaring widths every time I want to adjust the gap
-@mixin width-calc($block-gap) {
-  // Subtract gap from viewport to get slightly more accurate proportions
-  $w-20: calc((100vw - #{$block-gap}) * .2) !global;
-  $w-33: calc((100vw - #{$block-gap}) * .33333) !global;
-  $w-50: calc((100vw - #{$block-gap}) * .5) !global;
-  $w-66: calc((100vw - #{$block-gap}) * .66667) !global;
-  $w-80: calc((100vw - #{$block-gap}) * .8) !global;
-  
-  // Allow for setting of gap per breakpoint  
-  .blocks {
-    gap: $block-gap;
-  }
-}
+$body-text-size: clamp(16px, 3.7vw, 22px);
 
 body {
   font-feature-settings: 'kern';
@@ -38,340 +17,262 @@ body {
   -moz-osx-font-smoothing: auto;
 }
 
-h1 {
-  font-family: 'Advocate 16 Condensed Bold';
-  font-feature-settings: 'case' 1, 'liga' 0;
-}
-
 .light {
+  background: $color-slate-100;
+  color: $color-slate-900;
   .front {
-    background: $color-dr00-buff-100;
     h1, ul {
-      color: $color-dr00-buff-100;
+      color: $color-slate-700;
+    }
+    .highlight {
+      background: $color-slate-200;
     }
     a:hover {
-      color: $color-dr05-orange-700;
-    }
-    div[class$="-b"] {
-      background: $color-dr05-sand;
-    }
-    .block-02-a {
-      background: $color-dr05-blue-700;
-    }
-    .block-05-a, .block-08-a {
-      background: $color-dr05-orange-700;
-    }
-    .block-04-a, .block-07-a {
-      background: $color-dr05-beige;
+      color: $color-slate-100;
     }
   }
-  .blog, .about, .shelf {
-    background: $color-dr00-buff-150;
-  }
-  .posts {
-    background: $color-dr00-buff-100;
-    color: $color-slate-900;
+  .post-list {
+    // color: $color-slate-900;
   }
   .post-list-link {
     &:hover {
-      color: $color-dr05-orange-700;
+      color: $color-slate-400;
     }
   }
-  .post-header, .pagination, .post-nav {
-    border-top: 2px solid $color-dr05-sand;
+  article, .pagination, .post-nav {
+    // color: $color-slate-900;
   }
   .post-body {
-    border-top: 1px solid $color-dr05-sand;
     blockquote, div.highlight, code {
-      background: $color-dr00-buff-150;
+      background: $color-slate-200;
     }
     blockquote, div.highlight {
-      border-top: 1px solid $color-dr00-buff-200;
-      border-bottom: 1px solid $color-dr00-buff-200;
+      border-top: 1px solid $color-slate-300;
+      border-bottom: 1px solid $color-slate-300;
     }
   }
-  .post-body a, .post-nav a, .shelf-intro a {
+  .post-body a, .pagination a, .post-nav a {
     color: $color-dr05-orange-700;
     &:hover {
       background: $color-dr05-orange-700;
-      color: $color-dr00-buff-100;
+      color: $color-slate-100;
     }
   }
   .about, .shelf {
-    color: $color-slate-900;
+    // color: $color-slate-900;
   }
   .about-body {
-    background: $color-dr00-buff-100;
     a {
       color: $color-dr05-red-700;
       &:hover {
         background: $color-dr05-red-700;
-        color: $color-dr00-buff-100;
+        color: $color-slate-100;
       }
     }
   }
   .shelf {
-    .game {
-      border-top: 1px solid $color-slate-900;
+    .shelf-intro a {
+      color: $color-purple-700;
+      &:hover {
+        background: $color-purple-700;
+        color: $color-slate-100;
+      }
     }
     .icon {
       filter: invert(20%) sepia(10%) saturate(1816%) hue-rotate(176deg) brightness(101%) contrast(85%);
-    }
-    p.total {
-      border-top: 4px solid $color-slate-900;
     }
   }
 }
 
 .dark {
+  background: $color-slate-700;
+  color: $color-slate-100;
   .front {
-    background: $color-dr05-blue-900;
     h1, ul {
-      color: $color-dr00-buff-100;
+      // color: $color-slate-100;
     }
-    a:hover {
-      color: $color-dr05-red-700;
+    .highlight {
+      background: $color-slate-600;
     }
-    div[class$="-b"] {
-      background: $color-dr05-blue-700;
-    }
-    .block-02-a, .block-05-a, .block-08-a {
-      background: $color-dr05-orange-700;
-    }
-    .block-04-a, .block-07-a {
-      background: $color-dr05-sand;
-    }
-  }
-  .blog {
-    background: $color-dr05-blue-900;
-  }
-  .posts {
-    background: $color-dr05-blue-800;
-    color: $color-dr00-buff-100;
   }
   .post-list-link {
     &:hover {
-      color: $color-dr05-blue-300;
+      color: $color-slate-400;
     }
   }
-  .post-header, .pagination, .post-nav {
-    border-top: 2px solid $color-dr05-blue-600;
+  article, .pagination, .post-nav {
+    // color: $color-slate-100;
   }
   .post-body {
-    border-top: 1px solid $color-dr05-blue-600;
     blockquote, div.highlight, code {
-      background: $color-dr05-blue-800;
+      background: $color-slate-500;
+      color: $color-slate-50;
     }
     blockquote, div.highlight {
-      border-top: 1px solid $color-dr05-blue-600;
-      border-bottom: 1px solid $color-dr05-blue-600;
+      border-top: 1px solid $color-slate-400;
+      border-bottom: 1px solid $color-slate-400;
     }
   }
-  .post-body a, .post-nav a, .shelf-intro a {
+  .post-body a, .pagination a, .post-nav a {
     color: $color-dr05-orange-300;
     &:hover {
       background: $color-dr05-orange-700;
-      color: $color-dr00-buff-100;
+      color: $color-slate-100;
     }
   }
   .about, .shelf {
-    background: $color-dr05-blue-900;
-    color: $color-dr00-buff-100;
+    // color: $color-slate-100;
   }
   .about-body {
-    background: $color-dr05-blue-800;
     a {
-      color: $color-dr05-red-300;
+      color: $color-dr05-red-200;
       &:hover {
         background: $color-dr05-red-700;
-        color: $color-dr00-buff-100;
+        color: $color-slate-100;
       }
     }
   }
   .shelf {
-    .game {
-      border-top: 1px solid $color-dr00-buff-100;
+    .shelf-intro a {
+      color: $color-purple-300;
+      &:hover {
+        background: $color-purple-700;
+        color: $color-slate-100;
+      }
     }
     .icon {
       filter: invert(80%) sepia(10%) saturate(383%) hue-rotate(165deg) brightness(90%) contrast(91%);
     }
-    p.total {
-      border-top: 4px solid $color-dr00-buff-100;
-    }
   }
 }
 
-// ============================= BASE (~360px) 
-@include width-calc($block-gap: .3rem);
-
-// FRONT
-// Ugly measure to account for shallow viewports
-@media (height < 35rem) {
- div[class*="block-01"] {
-   display: none;
- } 
-}
-.front {
-  overflow: hidden;
-  h1 {
-    font-family: 'Advocate 16 Condensed Bold';
-    font-size: 7rem;
-    margin: 0 1rem;
-  }
-  ul {
-    font-family: 'Valkyrie A Caps';
-    font-feature-settings: 'ss10';
-    font-size: 1.25rem;
-    line-height: 1.5;
-    list-style: none;
-    margin: 0 .75rem 0 0;
-    padding: 0;
-  }
-  a {
-    color: inherit;
-    padding: 0 .25rem;
-    text-decoration: none;
-    &:hover {
-      background: $color-dr05-sand;
-      transition: $standard-transition;
-    }
-  }
-}
-.blocks {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-div[class*="block-"] {
-  height: 8rem;
-}
-
-div[class$="-b"] {
-  flex-grow: 1;
-}
-
-.block-01-a, .block-03-a, .block-06-a {
-  background: $color-dr05-red-700;
-}
-
-.block-01-a {
-  width: $w-33;
-}
-
-.block-02-a {
-  align-content: center;
-  display: flex;
-  justify-content: flex-end;
-  text-align: right;
-  width: 100vw;
-}
-
-.block-02-b {
-  display: none;
-}
-
-.block-03-a {
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-  text-align: right;
-  width: $w-80;
-}
-
-.block-04-a {
-  width: $w-20;
-}
-
-.block-05-a {
-  width: $w-80;
-}
-
-.block-06-a {
-  width: $w-50;
-}
-
-.block-07-a {
-  width: $w-66;
-}
-
-.block-08-a {
-  width: $w-80;
-}
-// END FRONT
-
-.blog, .about, .shelf {
+// ============================= BASE (~360px to 639) 
+body {
   display: flex;
   flex-direction: column;
-  h1 {
-    font-size: 3.25rem;
-    line-height: 2.75rem;
-    margin: 0;
-  }
-  a {
-    color: inherit;
-    text-decoration: none;
+  min-height: 100dvh;
+}
+h1 {
+  display: inline;
+  font-family: 'Valkyrie A Caps';
+  font-feature-settings: 'ss10';
+  font-size: clamp(20px, 15dvw, 5rem);
+  margin: 0;
+}
+.highlight {
+  padding: 0 1rem .5rem 1rem;
+}
+a {
+  color: inherit;
+  padding: 0 .25rem;
+  text-decoration: none;
+  &:hover {
+    transition: $standard-transition;
   }
 }
-.blog-header, .about-header, .shelf-header {
-  padding: 1rem;
-  color: $color-dr00-buff-100;
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
+footer {
+  background: $color-slate-800;
+  color: $color-slate-100;
+  justify-self: end;
+  padding: 2rem;
   a {
     transition: $standard-transition;
     &:hover, &.nav-active {
-      background: $color-dr00-buff-100;
-      padding: 0 3px;
-      margin-right: -3px;
+      background: $color-slate-600;
+      // padding: 0 .25rem;
     }
-  }
-  p {
-    font-family: 'Valkyrie A';
-    font-size: 1.5rem;
-    font-style: italic;
-    margin: 1rem 0 0 0;
   }
   ul {
     font-family: 'Valkyrie A Caps';
     font-feature-settings: 'ss10';
     font-size: 1.5rem;
+    font-weight: bold;
     line-height: 1.5;
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: right
+    text-align: left;
   }
 }
+
+// FRONT
+.front {
+  height: 100dvh;
+  main {
+    border-top: 1px solid $color-slate-400;
+    border-bottom: 1px solid $color-slate-400;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 2rem;
+    padding: 15dvh 0 2rem 0;
+  }
+  ul {
+    font-family: 'Valkyrie A Caps';
+    font-feature-settings: 'ss10';
+    font-size: clamp(14px, 7dvw, 2rem);
+    font-weight: bold;
+    line-height: 1.5;
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+  }
+  a.nav-shelf:hover {
+    background: $color-purple-700;
+  }
+  a.nav-iwt:hover {
+    background: $color-dr05-orange-700;
+  }
+  a.nav-about:hover {
+    background: $color-dr05-red-700;
+  }
+}
+// END FRONT
+
+// BLOG
 .blog-header {
   background: $color-dr05-orange-700;
-  a {
-    &:hover, &.nav-active {
-      color: $color-dr05-orange-700;
-    }
+  p {
+    font-family: 'Valkyrie A';
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 1rem 0 0 0;
   }
 }
-.posts {
-  padding: 1rem;
+.post-list {
+  padding: 0 0 2rem 0;
+  .post-header {
+    border-top: 1px solid $color-slate-400;
+    padding: 2rem 0;
+  }
+  article:first-of-type {
+    .post-header {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+  article:last-of-type {
+    .post-header {
+      padding-bottom: 0;
+    }
+  }
+  .post-list-link {
+    padding: 0;
+    transition: $standard-transition;
+  }
 }
-article, .about-body, .shelf-body {
-  font-family: 'Valkyrie A';
-  font-feature-settings: 'ss01', 'liga';
-  font-size: min(22px, max(16px, 3.7vw));
-  line-height: 1.4;
-}
-.post-list-link {
-  transition: $standard-transition;
+article {
+  a {
+    padding: 0;
+  }
 }
 .post-header {
-  padding: 1rem 0;
   h2 {
     font-family: 'Valkyrie A';
-    font-size: min(32px, max(24px, 4.5vw));
+    font-size: clamp(24px, 4.5vw, 32px);
     font-weight: bold;
     line-height: 1.1;
-    margin: .5rem 0 0;
+    margin: 1rem 0 0;
   }
 }
 .post-date {
@@ -380,9 +281,119 @@ article, .about-body, .shelf-body {
   font-size: 1.1rem;
   line-height: 1rem;
 }
+.post-body {
+  padding-top: 2rem;
+  h3 {
+    font-family: 'Valkyrie A Caps';
+    font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+    line-height: 1.2;
+    margin: 2rem 0 .5rem 0;
+  }
+  h4 {
+    margin: 2rem 0 .5rem 0;
+  }
+  blockquote {
+    padding: 2rem;
+    font-size: 90%;
+  }
+  div.highlight {
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+  }
+}
+.lead-in {
+  font-family: 'Valkyrie A Caps';
+  font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+  font-weight: bold;
+}
+.pagination {
+  border-top: 4px solid $color-slate-400;
+  display: flex;
+  font-family: 'Valkyrie A Caps';
+  font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
+  font-size: $body-text-size; 
+  justify-content: space-between;
+  margin: 2rem 2rem 0 2rem;
+  padding-top: 2rem;
+  .newer, .page-count, .older {
+    width: 33%;
+  }
+  .newer {
+    font-weight: bold;
+    text-align: left;
+  }
+  .page-count {
+    text-align: center;
+  }
+  .older {
+    font-weight: bold;
+    text-align: right;
+  }
+}
+.post-nav {
+  border-top: 4px solid $color-slate-400;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Valkyrie A';
+  font-size: $body-text-size;
+  font-weight: bold;
+  gap: 1rem;
+  margin: 2rem;
+  padding-top: 2rem;
+}
+// END BLOG
+
+.about, .shelf {
+  display: flex;
+  flex-direction: column;
+  h1 {
+    font-family: 'Valkyrie A Caps';
+    font-feature-settings: 'ss10';
+    font-size: 2.5rem;
+    line-height: 2rem;
+    margin: 0;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+.blog-header, .about-header, .shelf-header {
+  color: $color-slate-100;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 2rem;
+  margin: 2rem;
+  h1 {
+    font-size: 2rem;
+    line-height: 1.8rem;
+  }
+  p {
+    font-family: 'Valkyrie A';
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 1rem 0 0 0;
+  }
+}
+
+article, .about-body, .shelf-body {
+  font-family: 'Valkyrie A';
+  font-feature-settings: 'ss01', 'liga';
+  font-size: $body-text-size;
+  line-height: 1.4;
+  padding: 0 2rem;
+}
+
 .post-body, .about-body {
   p, blockquote, li {
     margin: 0 0 1rem 0;
+  }
+  :last-child {
+    margin-bottom: 0;
+    li:last-of-type {
+      margin-bottom: 0;
+    }
   }
   ol, ul {
     padding-left: 2rem;
@@ -410,71 +421,14 @@ article, .about-body, .shelf-body {
     white-space: nowrap;
   }
 }
-.post-body {
-  padding-top: 1rem;
-  h3 {
-    font-family: 'Valkyrie A Caps';
-    font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
-    line-height: 1.2;
-    margin: 2rem 0 .5rem 0;
-  }
-  h4 {
-    margin: 2rem 0 .5rem 0;
-  }
-  blockquote {
-    padding: 1.5rem 2rem 0.5rem 2rem;
-    font-size: 85%;
-  }
-  div.highlight {
-    margin: 0 0 1rem 0;
-    padding: 1rem;
-  }
-}
-.lead-in {
-  font-family: 'Valkyrie A Caps';
-  font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
-  font-weight: bold;
-}
-.pagination {
-  display: flex;
-  font-family: 'Valkyrie A Caps';
-  font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
-  justify-content: space-between;
-  padding-top: 1rem;
-  .newer, .page-count, .older {
-    width: 33%;
-  }
-  .newer {
-    text-align: left;
-  }
-  .page-count {
-    text-align: center;
-  }
-  .older {
-    text-align: right;
-  }
-}
-.post-nav {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Valkyrie A';
-  font-size: min(22px, max(16px, 3.7vw));
-  font-weight: bold;
-  gap: 1rem;
-  padding-top: 1rem;
-}
+
 
 // ABOUT
 .about-header {
   background: $color-dr05-red-700;
-  a {
-    &:hover, &.nav-active {
-      color: $color-dr05-red-700;
-    }
-  }
 }
 .about-body {
-  padding: 1rem;
+  padding: 0 2rem 2rem 2rem;
   p:first-child {
     font-size: 1.2em;
     margin-top: 0;
@@ -486,6 +440,9 @@ article, .about-body, .shelf-body {
     font-size: 1.17em;
     line-height: 1.2;
     margin: 0 0 .5rem 0;
+  }
+  a {
+    padding: 0;
   }
 }
 .theme-control {
@@ -530,23 +487,22 @@ article, .about-body, .shelf-body {
 
 // SHELF
 .shelf-header {
-  background: $color-dr05-blue-700;
-  a {
-    &:hover, &.nav-active {
-      color: $color-dr05-blue-700;
-    }
-  }
+  background: $color-purple-600;
 }
 .shelf-body {
-  padding: 1rem;
+  padding: 0 2rem 2rem 2rem;
   gap: 2rem;
+  a {
+    padding: 0;
+  }
   table {
     display: none;
   }
 }
 .shelf-intro {
   font-size: 1.2em;
-  margin-top: 0;
+  margin: 0;
+  padding: 0;
 }
 .non-table {
   p {
@@ -561,21 +517,11 @@ article, .about-body, .shelf-body {
   }
 }
 .game {
-  padding-top: 1.5rem;
-  margin-top: 1.5rem;
+  border-top: 1px solid $color-slate-400;
+  padding-top: 2rem;
+  margin-top: 2rem;
 }
-.toggle {
-  &:hover {
-    .name {
-      background: $color-orange-700;
-      color: $color-orange-50;
-    }
-    .icon {
-      // Recolor SVG using filter
-      filter: invert(26%) sepia(60%) saturate(2235%) hue-rotate(357deg) brightness(101%) contrast(95%);
-    }
-  }
-}
+
 .closed {
   .game-notes {
     display: none;
@@ -593,13 +539,13 @@ article, .about-body, .shelf-body {
     transform: rotate(90deg);
     transition: $standard-transition;
   }
+  ul {
+    padding-left: 2rem;
+    margin: .5rem 0 1rem;
+  }
 }
 a {
   color: inherit;
-}
-ul {
-  padding-left: 2rem;
-  margin: .5rem 0 1rem;
 }
 .cell-game {
   display: flex;
@@ -617,11 +563,14 @@ ul {
   cursor: pointer;
   &:hover {
     .name {
+      background: $color-orange-700;
       box-decoration-break: clone;        
       -webkit-box-decoration-break: clone;        
+      color: $color-orange-50;
       transition: $standard-transition;
     }
     .icon {
+      filter: invert(26%) sepia(60%) saturate(2235%) hue-rotate(357deg) brightness(101%) contrast(95%);
       transition: $standard-transition;
     }
   }
@@ -674,6 +623,9 @@ ul {
     background: $color-teal-600;
     color: $color-teal-50;
 }
+.total {
+  border-top: 4px solid $color-slate-400;
+}
 // END SHELF
 
 // UTILS
@@ -687,44 +639,8 @@ ul {
 // ========================= END BASE
 
 @media (min-width: 640px) {
-  .front {
-    .block-02-a {
-      width: $w-80;
-    }
-    
-    .block-02-b {
-      display: block;
-    }
-    
-    .block-03-a {
-      width: $w-66;
-    }
-    
-    .block-03-b {
-      // Set a width sufficient to prevent 04-a from sliding up to row 3
-      width: $w-33;
-    }
-  }
-
-  .blog-header, .about-header, .shelf-header {
-    padding: 2rem;
-  }
-  .posts, .about-body {
-    padding: 2rem;
-  }
-  .post-header {
-      padding: 2rem 0;
-  }
-  .post-body {
-    padding: 2rem 0 1rem;
-  }
-  .pagination, .post-nav {
-    padding-top: 2rem;
-  }
-  
   .shelf {
     .shelf-body {
-      padding: 2rem;
       ul {
         margin: .5rem 0 0;
       }
@@ -735,8 +651,9 @@ ul {
     table {
       border-collapse: collapse;
       display: table;
-      font-size: min(22px, max(16px, 3.7vw));
+      font-size: $body-text-size;
       line-height: 1.4;
+      margin-top: 2rem;
       table-layout: auto;
       width: 100%;
     }
@@ -758,7 +675,7 @@ ul {
       }
     }
     .name {
-      font-size: min(22px, max(16px, 3.7vw));
+      font-size: $body-text-size;
     }
     tr.total {
       border: none;
@@ -767,126 +684,39 @@ ul {
 }
 
 @media (min-width: 768px) {
-  @include width-calc($block-gap: .75rem);
-  
-  .front {
-    h1 {
-      font-size: 9rem;
-      line-height: 9rem;
-    }
-    
-    div[class*="block-"] {
-      height: 9rem;
-    }
-    
-    // Must redeclare widths of all A blocks every time I change gap size
-    .block-01-a {
-      width: $w-33;
-    }
-    
-    .block-02-a {
-      width: $w-66;
-    }
-    
-    .block-03-a {
-      width: $w-50;
-    }
-    
-    .block-03-b {
-      // Set a width sufficient to prevent 04-a from sliding up to row 3
-      width: $w-33;
-    }
-    
-    .block-04-a {
-      width: $w-20;
-    }
-    
-    .block-05-a {
-      width: $w-80;
-    }
-    
-    .block-06-a {
-      width: $w-50;
-    }
-    
-    .block-07-a {
-      width: $w-66;
-    }
-    
-    .block-08-a {
-      width: $w-80;
-    }
-  }
-  .blog, .about, .shelf {
-    align-items: flex-start;
-    flex-direction: row;
-    justify-content: center;
-  }
-  .blog-header, .about-header, .shelf-header {
-    flex-direction: column;
-    justify-content: flex-start;
-    width: min(237px, max(265px, 33%));
-    ul {
-      margin: 0;
-      text-align: left;
-    }
-    a {
-      &:hover, &.nav-active {
-        margin: 0 0 0 -3px;
-      }
-    }
-  }
-  .posts, .about-body {
-    width: 100%;
-    max-width: 650px;
+  article, .about-body {
+    width: clamp(300px, 40rem, 650px);
   }
   .shelf-body {
-    width: 100%;
-    max-width: 900px;
+    width: clamp(540px, 100%, 900px);
   }
 }
 
 @media (min-width: 1024px) {
-  @include width-calc($block-gap: 1rem);
-  
-  .front {
-    h1 {
-      font-size: 10rem;
-      line-height: 10rem;
+  .blog, .about, .shelf {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .blog-header, .about-header, .shelf-header {
+    flex: initial;
+    margin: 2rem 0 0 2rem;
+    padding: 2rem;
+    width: clamp(190px, 200px, 30%);
+  }
+  .post-list {
+    article {
+      margin: 0;
+      padding: 0;
     }
-    
-    ul {
-      font-size: 1.5rem;
-      line-height: 1.5;
-    }
-    
-    div[class*="block-"] {
-      height: 10rem;
-    }
-    
-    // Must redeclare widths of all A blocks every time I change gap size
-    .block-01-a {
-      width: $w-33;
-    }
-    
-    .block-04-a {
-      width: $w-20;
-    }
-    
-    .block-05-a {
-      width: $w-80;
-    }
-  
-    .block-06-a {
-      width: $w-50;
-    }
-  
-    .block-07-a {
-      width: $w-66;
-    }
-  
-    .block-08-a {
-      width: $w-80;
-    }
+  }
+  article, .post-list, .about-body, .shelf-body {
+    padding: 2rem;
+  }
+  .pagination {
+    margin: 2rem 0 0 0;
+  }
+  footer {
+    width: 100%;
   }
 }

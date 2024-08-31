@@ -1,6 +1,7 @@
 ---
 title: About Cedeless
 layout: about
+page_class: about
 permalink: /about/
 ---
 
@@ -48,7 +49,7 @@ Nope. I did not use any large-language-model tools in the development of this si
 
 This site is powered by a local installation of [Jekyll](https://jekyllrb.com/). Jekyll parses Markdown, compiles Sass, processes control-flow blocks, and produces a directory of HTML, CSS, and JS files that I basically just FTP to a server.
 
-I'm using Matthew Butterick's [Valkyrie](https://mbtype.com/fonts/valkyrie/), [Advocate](https://mbtype.com/fonts/advocate/), and [Triplicate](https://mbtype.com/fonts/triplicate/) typefaces.
+I'm using Matthew Butterick's [Valkyrie](https://mbtype.com/fonts/valkyrie/) and [Triplicate](https://mbtype.com/fonts/triplicate/) typefaces.
 
 Colors are derived from [these Dieter Rams palettes](https://www.presentandcorrect.com/blogs/blog/rams-palette) collected by Chad Ashley.
 
@@ -56,4 +57,4 @@ Colors are derived from [these Dieter Rams palettes](https://www.presentandcorre
 
 By default, this site will match your operating system's theme. You can override that behavior here. The setting is stored in your browser's local storage.
 
-{% include theme_control.html %}
+{% include _theme_control.html %}

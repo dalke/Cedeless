@@ -1,6 +1,9 @@
 - name: Shelf
   url: /shelf/
+  class: nav-shelf
 - name: IWT
   url: /iwt/
+  class: nav-iwt
 - name: About
   url: /about/
+  class: nav-about

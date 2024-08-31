@@ -1,6 +1,7 @@
 ---
 layout: blog_post
 title: "Zelda Project: Link to the Past"
+page_class: blog
 ---
 
 <span class="lead-in">Game:</span> The Legend of Zelda: A Link to the Past (1991)

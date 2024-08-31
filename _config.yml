@@ -13,6 +13,7 @@ paginate_path: "/iwt/page:num/"
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-paginate
   
 feed:
   path: /iwt/feed.xml
