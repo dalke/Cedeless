@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Tailwind colors ----------
 
 // Slate
@@ -290,6 +292,8 @@ $color-rose-950:    #4c0519;
 
 $color-dr00-buff-base: #e3e4db;
 $color-dr00-buff-100: $color-dr00-buff-base;
+$color-dr00-buff-150: color.scale($color-dr00-buff-base, $lightness: -5%);
+$color-dr00-buff-200: color.scale($color-dr00-buff-base, $lightness: -10%);
 
 // DR01
 $color-dr01-blue:     #aab7bf;
@@ -306,9 +310,39 @@ $color-dr03-gray:     #9c9c9c;
 $color-dr03-white:    #e1e4e1;
 
 // DR05
-$color-dr05-red: #af2e1b;
-$color-dr05-orange: #cc6324;
-$color-dr05-blue: #3b4b59;
+$color-dr05-red-base: #af2e1b;
+$color-dr05-red-100: color.scale($color-dr05-red-base, $lightness: 90%);
+$color-dr05-red-200: color.scale($color-dr05-red-base, $lightness: 75%);
+$color-dr05-red-300: color.scale($color-dr05-red-base, $lightness: 60%);
+$color-dr05-red-400: color.scale($color-dr05-red-base, $lightness: 45%);
+$color-dr05-red-500: color.scale($color-dr05-red-base, $lightness: 30%);
+$color-dr05-red-600: color.scale($color-dr05-red-base, $lightness: 15%);
+$color-dr05-red-700: $color-dr05-red-base;
+$color-dr05-red-800: color.scale($color-dr05-red-base, $lightness: -15%);
+$color-dr05-red-900: color.scale($color-dr05-red-base, $lightness: -30%);
+
+$color-dr05-orange-base: #cc6324;
+$color-dr05-orange-100: color.scale($color-dr05-orange-base, $lightness: 90%);
+$color-dr05-orange-200: color.scale($color-dr05-orange-base, $lightness: 75%);
+$color-dr05-orange-300: color.scale($color-dr05-orange-base, $lightness: 60%);
+$color-dr05-orange-400: color.scale($color-dr05-orange-base, $lightness: 45%);
+$color-dr05-orange-500: color.scale($color-dr05-orange-base, $lightness: 30%);
+$color-dr05-orange-600: color.scale($color-dr05-orange-base, $lightness: 15%);
+$color-dr05-orange-700: $color-dr05-orange-base;
+$color-dr05-orange-800: color.scale($color-dr05-orange-base, $lightness: -15%);
+$color-dr05-orange-900: color.scale($color-dr05-orange-base, $lightness: -30%);
+
+$color-dr05-blue-base: #3b4b59;
+$color-dr05-blue-100: color.scale($color-dr05-blue-base, $lightness: 90%);
+$color-dr05-blue-200: color.scale($color-dr05-blue-base, $lightness: 75%);
+$color-dr05-blue-300: color.scale($color-dr05-blue-base, $lightness: 60%);
+$color-dr05-blue-400: color.scale($color-dr05-blue-base, $lightness: 45%);
+$color-dr05-blue-500: color.scale($color-dr05-blue-base, $lightness: 30%);
+$color-dr05-blue-600: color.scale($color-dr05-blue-base, $lightness: 15%);
+$color-dr05-blue-700: $color-dr05-blue-base;
+$color-dr05-blue-800: color.scale($color-dr05-blue-base, $lightness: -15%);
+$color-dr05-blue-900: color.scale($color-dr05-blue-base, $lightness: -30%);
+
 $color-dr05-beige:  #bfa07a;
 $color-dr05-sand:   #d9c3b0;
 

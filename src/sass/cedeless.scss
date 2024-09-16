@@ -1,7 +1,5 @@
----
----
 @use 'partials/normalize';
-@use 'partials/color';
+@use 'partials/colors';
 @use 'partials/type';
 
 // Stuff to reuse
@@ -16,47 +14,47 @@ body {
 }
 
 .light {
-  background: $color-slate-100;
-  color: $color-slate-900;
+  background: colors.$color-slate-100;
+  color: colors.$color-slate-900;
   .front {
     .highlight {
-      background: $color-slate-200;
+      background: colors.$color-slate-200;
     }
     a:hover {
-      color: $color-slate-100;
+      color: colors.$color-slate-100;
     }
   }
   .post-body {
     blockquote, div.highlight, code {
-      background: $color-slate-200;
+      background: colors.$color-slate-200;
     }
     blockquote, div.highlight {
-      border-top: 1px solid $color-slate-300;
-      border-bottom: 1px solid $color-slate-300;
+      border-top: 1px solid colors.$color-slate-300;
+      border-bottom: 1px solid colors.$color-slate-300;
     }
   }
   .post-body a, .pagination a, .post-nav a {
-    color: $color-dr05-orange;
+    color: colors.$color-dr05-orange-700;
     &:hover {
-      background: $color-dr05-orange;
-      color: $color-slate-100;
+      background: colors.$color-dr05-orange-700;
+      color: colors.$color-slate-100;
     }
   }
   .about-body {
     a {
-      color: $color-dr05-red;
+      color: colors.$color-dr05-red-700;
       &:hover {
-        background: $color-dr05-red;
-        color: $color-slate-100;
+        background: colors.$color-dr05-red-700;
+        color: colors.$color-slate-100;
       }
     }
   }
   .shelf {
     .shelf-intro a {
-      color: $color-purple-700;
+      color: colors.$color-purple-700;
       &:hover {
-        background: $color-purple-700;
-        color: $color-slate-100;
+        background: colors.$color-purple-700;
+        color: colors.$color-slate-100;
       }
     }
     .icon {
@@ -66,47 +64,45 @@ body {
 }
 
 .dark {
-  background: $color-slate-700;
-  color: $color-slate-100;
+  background: colors.$color-slate-700;
+  color: colors.$color-slate-100;
   .front {
     .highlight {
-      background: $color-slate-600;
+      background: colors.$color-slate-600;
     }
   }
   .post-body {
     blockquote, div.highlight, code {
-      background: $color-slate-500;
-      color: $color-slate-50;
+      background: colors.$color-slate-500;
+      color: colors.$color-slate-50;
     }
     blockquote, div.highlight {
-      border-top: 1px solid $color-slate-400;
-      border-bottom: 1px solid $color-slate-400;
+      border-top: 1px solid colors.$color-slate-400;
+      border-bottom: 1px solid colors.$color-slate-400;
     }
   }
   .post-body a, .pagination a, .post-nav a {
-    // TODO: Fix color
-    color: $color-dr05-orange;
+    color: colors.$color-dr05-orange-300;
     &:hover {
-      background: $color-dr05-orange;
-      color: $color-slate-100;
+      background: colors.$color-dr05-orange-700;
+      color: colors.$color-slate-100;
     }
   }
   .about-body {
     a {
-      // TODO: Fix color
-      color: $color-dr05-red;
+      color: colors.$color-dr05-red-200;
       &:hover {
-        background: $color-dr05-red;
-        color: $color-slate-100;
+        background: colors.$color-dr05-red-700;
+        color: colors.$color-slate-100;
       }
     }
   }
   .shelf {
     .shelf-intro a {
-      color: $color-purple-300;
+      color: colors.$color-purple-300;
       &:hover {
-        background: $color-purple-700;
-        color: $color-slate-100;
+        background: colors.$color-purple-700;
+        color: colors.$color-slate-100;
       }
     }
     .icon {
@@ -140,14 +136,14 @@ a {
   }
 }
 footer {
-  background: $color-slate-800;
-  color: $color-slate-100;
+  background: colors.$color-slate-800;
+  color: colors.$color-slate-100;
   justify-self: end;
   padding: 2rem;
   a {
     transition: $standard-transition;
     &:hover, &.nav-active {
-      background: $color-slate-600;
+      background: colors.$color-slate-600;
     }
   }
   ul {
@@ -167,8 +163,8 @@ footer {
 .front {
   height: 100dvh;
   main {
-    border-top: 1px solid $color-slate-400;
-    border-bottom: 1px solid $color-slate-400;
+    border-top: 1px solid colors.$color-slate-400;
+    border-bottom: 1px solid colors.$color-slate-400;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -186,20 +182,20 @@ footer {
     padding: 0;
   }
   a.nav-shelf:hover {
-    background: $color-purple-700;
+    background: colors.$color-purple-700;
   }
   a.nav-iwt:hover {
-    background: $color-dr05-orange;
+    background: colors.$color-dr05-orange-700;
   }
   a.nav-about:hover {
-    background: $color-dr05-red;
+    background: colors.$color-dr05-red-700;
   }
 }
 // END FRONT
 
 // BLOG
 .blog-header {
-  background: $color-dr05-orange;
+  background: colors.$color-dr05-orange-700;
   p {
     font-family: 'Valkyrie A';
     font-size: 1.2rem;
@@ -210,7 +206,7 @@ footer {
 .post-list {
   padding: 0 0 2rem 0;
   .post-header {
-    border-top: 1px solid $color-slate-400;
+    border-top: 1px solid colors.$color-slate-400;
     padding: 2rem 0;
   }
   article:first-of-type {
@@ -228,7 +224,7 @@ footer {
     padding: 0;
     transition: $standard-transition;
     &:hover {
-      color: $color-slate-400;
+      color: colors.$color-slate-400;
     }
   }
 }
@@ -278,7 +274,7 @@ article {
   font-weight: bold;
 }
 .pagination {
-  border-top: 4px solid $color-slate-400;
+  border-top: 4px solid colors.$color-slate-400;
   display: flex;
   font-family: 'Valkyrie A Caps';
   font-feature-settings: 'smcp' 1, 'c2sc' 1, 'ss01' 1;
@@ -302,7 +298,7 @@ article {
   }
 }
 .post-nav {
-  border-top: 4px solid $color-slate-400;
+  border-top: 4px solid colors.$color-slate-400;
   display: flex;
   flex-direction: column;
   font-family: 'Valkyrie A';
@@ -330,7 +326,7 @@ article {
   }
 }
 .blog-header, .about-header, .shelf-header {
-  color: $color-slate-100;
+  color: colors.$color-slate-100;
   display: flex;
   gap: 1rem;
   justify-content: space-between;
@@ -396,7 +392,7 @@ article, .about-body, .shelf-body {
 
 // ABOUT
 .about-header {
-  background: $color-dr05-red;
+  background: colors.$color-dr05-red-700;
 }
 .about-body {
   padding: 0 2rem 2rem 2rem;
@@ -417,9 +413,8 @@ article, .about-body, .shelf-body {
   }
 }
 .theme-control {
-  // TODO: Fix colors
-  background: $color-dr05-blue;
-  border: 2px solid $color-dr05-blue;
+  background: colors.$color-dr05-blue-200;
+  border: 2px solid colors.$color-dr05-blue-500;
   bottom: 1rem;
   fieldset {
     border: none;
@@ -439,14 +434,12 @@ article, .about-body, .shelf-body {
     input[type="radio"] {
       display: none;
       &:checked + label {
-        background: $color-dr05-red;
-        // TODO: Fix color
-        color: $color-dr00-buff;
+        background: colors.$color-dr05-red-700;
+        color: colors.$color-dr00-buff-100;
       }
     }
     label {
-      // TODO: Fix color
-      color: $color-dr05-blue;
+      color: colors.$color-dr05-blue-900;
       cursor: pointer;
       display: inline-block;
       font-family: 'Valkyrie A Caps';
@@ -461,7 +454,7 @@ article, .about-body, .shelf-body {
 
 // SHELF
 .shelf-header {
-  background: $color-purple-600;
+  background: colors.$color-purple-600;
 }
 .shelf-body {
   padding: 0 2rem 2rem 2rem;
@@ -491,7 +484,7 @@ article, .about-body, .shelf-body {
   }
 }
 .game {
-  border-top: 1px solid $color-slate-400;
+  border-top: 1px solid colors.$color-slate-400;
   padding-top: 2rem;
   margin-top: 2rem;
 }
@@ -537,10 +530,10 @@ a {
   cursor: pointer;
   &:hover {
     .name {
-      background: $color-orange-700;
+      background: colors.$color-orange-700;
       box-decoration-break: clone;        
       -webkit-box-decoration-break: clone;        
-      color: $color-orange-50;
+      color: colors.$color-orange-50;
       transition: $standard-transition;
     }
     .icon {
@@ -570,35 +563,35 @@ a {
   vertical-align: baseline;
 }
 .status-backlog {
-    background: $color-sky-600;
-    color: $color-sky-50;
+    background: colors.$color-sky-600;
+    color: colors.$color-sky-50;
 }
 .status-coming-soon {
-    background: $color-amber-600;
-    color: $color-amber-50;
+    background: colors.$color-amber-600;
+    color: colors.$color-amber-50;
 }
 .status-done {
-    background: $color-slate-600;
-    color: $color-slate-50;
+    background: colors.$color-slate-600;
+    color: colors.$color-slate-50;
 }
 .status-in-progress {
-    background: $color-lime-600;
-    color: $color-lime-50;
+    background: colors.$color-lime-600;
+    color: colors.$color-lime-50;
 }
 .status-never-going-to-play {
-    background: $color-rose-600;
-    color: $color-rose-50;
+    background: colors.$color-rose-600;
+    color: colors.$color-rose-50;
 }
 .status-to-investigate {
-    background: $color-purple-600;
-    color: $color-purple-50;
+    background: colors.$color-purple-600;
+    color: colors.$color-purple-50;
 }
 .status-abandoned {
-    background: $color-teal-600;
-    color: $color-teal-50;
+    background: colors.$color-teal-600;
+    color: colors.$color-teal-50;
 }
 .total {
-  border-top: 4px solid $color-slate-400;
+  border-top: 4px solid colors.$color-slate-400;
 }
 // END SHELF
 
