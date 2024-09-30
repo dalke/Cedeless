@@ -1,8 +1,13 @@
 const sass = require("sass");
+const yaml = require("js-yaml");
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addWatchTarget("./src/sass");
-  eleventyConfig.addPassthroughCopy("./src/css");
+  eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
+  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/*.png");
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
+  eleventyConfig.addPassthroughCopy("src/safari-pinned-tab.svg");
+  eleventyConfig.addPassthroughCopy("src/site.webmanifest");
   
   
   // eleventyConfig.addTemplateFormats("scss");

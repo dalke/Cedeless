@@ -313,7 +313,7 @@ template {
   font-weight: normal;
   font-stretch: normal;
   font-display: auto;
-  src: url("/fonts/advocate_16_cond_bold.woff2") format("woff2");
+  src: url("/assets/fonts/advocate_16_cond_bold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Valkyrie A";
@@ -321,7 +321,7 @@ template {
   font-weight: normal;
   font-stretch: normal;
   font-display: auto;
-  src: url("/fonts/valkyrie_a_regular.woff2") format("woff2");
+  src: url("/assets/fonts/valkyrie_a_regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "Valkyrie A";
@@ -329,7 +329,7 @@ template {
   font-weight: normal;
   font-stretch: normal;
   font-display: auto;
-  src: url("/fonts/valkyrie_a_italic.woff2") format("woff2");
+  src: url("/assets/fonts/valkyrie_a_italic.woff2") format("woff2");
 }
 @font-face {
   font-family: "Valkyrie A";
@@ -337,7 +337,7 @@ template {
   font-weight: bold;
   font-stretch: normal;
   font-display: auto;
-  src: url("/fonts/valkyrie_a_bold.woff2") format("woff2");
+  src: url("/assets/fonts/valkyrie_a_bold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Valkyrie A";
@@ -345,7 +345,7 @@ template {
   font-weight: bold;
   font-stretch: normal;
   font-display: auto;
-  src: url("/fonts/valkyrie_a_bold_italic.woff2") format("woff2");
+  src: url("/assets/fonts/valkyrie_a_bold_italic.woff2") format("woff2");
 }
 @font-face {
   font-family: "Valkyrie A Caps";
@@ -353,7 +353,7 @@ template {
   font-weight: normal;
   font-stretch: normal;
   font-display: auto;
-  src: url("/fonts/valkyrie_a_caps_regular.woff2") format("woff2");
+  src: url("/assets/fonts/valkyrie_a_caps_regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "Valkyrie A Caps";
@@ -361,7 +361,7 @@ template {
   font-weight: bold;
   font-stretch: normal;
   font-display: auto;
-  src: url("/fonts/valkyrie_a_caps_bold.woff2") format("woff2");
+  src: url("/assets/fonts/valkyrie_a_caps_bold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Triplicate A Code";
@@ -369,7 +369,7 @@ template {
   font-weight: normal;
   font-stretch: normal;
   font-display: auto;
-  src: url("/fonts/triplicate_a_code_regular.woff2") format("woff2");
+  src: url("/assets/fonts/triplicate_a_code_regular.woff2") format("woff2");
 }
 body {
   font-feature-settings: "kern";
