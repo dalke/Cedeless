@@ -55,10 +55,6 @@ submitButton.addEventListener("click", (event) => {
   searchAction();
 });
 
-// GET https://www.giantbomb.com/api/games/?api_key=74a559b13c763865b33c1dcadcf2bbb6d7cabb23&format=jsonp&json_callback=searchCallback&field_list=name,original_release_date,site_detail_url&limit=10&offset=0&filter=name%3Asuper%20mario%2064
-
-// https:www.giantbomb.com/api/games/?api_key=74a559b13c763865b33c1dcadcf2bbb6d7cabb23&format=jsonp&json_callback=searchCallback&field_list=name,original_release_date,site_detail_url&limit=10&offset=0&filter=name:super%20mario%2064
-
 // $("#submit").click(function () {
 //   var query = document.getElementById("search").value;
 //   $.ajax({
