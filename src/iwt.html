@@ -1,0 +1,48 @@
+---
+title: Infinite, Worthless Time
+layout: base
+page_class: blog
+permalink: "iwt/index.html"
+---
+
+<header class="blog-header">
+  <div>
+    <h1>Infinite, <br />Worthless <br />Time</h1>
+    <p>Notes from a temporary retirement</p>
+  </div>
+</header>
+<main class="post-list">
+  {% for post in collections.posts reversed %}
+  <article>
+    <a class="post-list-link" href="{{ post.url }}">
+      <header class="post-header">
+        <div class="post-date">{{ post.data.dateEt | date: '%B %e, %Y' }}</div>
+        <h2>{{ post.data.title }}</h2>
+      </header>
+    </a>
+  </article>
+
+  {% endfor %} {% comment %} Show pagination controls if total number of posts
+  exceeds number of posts to show per page as defined in config.yml {% if
+  site.posts.size > site.paginate %}
+  <div class="pagination">
+    <div class="newer">
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}"> Newer </a>
+      {% endif %}
+    </div>
+    <div class="page-count">
+      Page
+      <span class="util-nowrap"
+        >{{ paginator.page }} of {{ paginator.total_pages }}</span
+      >
+    </div>
+    <div class="older">
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}"> Older </a>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %} {% endcomment %}
+</main>
+{% include '_footer' %}
