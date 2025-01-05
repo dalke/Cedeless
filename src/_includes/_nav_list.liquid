@@ -2,24 +2,15 @@
   {% comment %}
     Include a Home nav item except on the front page
   {% endcomment %}
-  {% comment %} {% if current_url != '/' %}
+  {% if page.url != '/' %}
     <li>
       <a href="/">
         Home
       </a>
     </li>
-  {% endif %} {% endcomment %}
+  {% endif %}
   {% for item in navigation %}
-    {% comment %}
-      Barfy, repetitive logic to get subpages to highlight the nav items
-    {% endcomment %}
-    {% if item.url == "/about/" and current_url contains "/about/" %}
-      <li>
-        <a class="{{ item.class }} nav-active" href="{{ item.url }}">
-          {{ item.name }}
-        </a>
-      </li>
-    {% elsif item.url == "/iwt/" and current_url contains "/iwt/" %}
+    {% if page.url contains item.url %}
       <li>
         <a class="{{ item.class }} nav-active" href="{{ item.url }}">
           {{ item.name }}
@@ -27,7 +18,7 @@
       </li>
     {% else %}
       <li>
-        <a class="{{ item.class }}{% if page.url == item.url %} nav-active{% endif %}" href="{{ item.url }}">
+        <a class="{{ item.class }}" href="{{ item.url }}">
           {{ item.name }}
         </a>
       </li>

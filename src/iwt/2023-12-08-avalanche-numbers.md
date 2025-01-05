@@ -1,5 +1,6 @@
 ---
 title: The most memorable Colorado Avalanche player to wear each roster number
+date: 2023-12-08 00:00:00 -5
 ---
 
 The 2023–24 NHL season is about one-quarter complete. There are quite a few new players on this season's Avalanche roster, but I've watched enough of their games that I've pretty much stopped needing to look up who wears which number. Doing so earlier in the season, though, got me to thinking about which player I most associate with each sweater number. So I've compiled a list.

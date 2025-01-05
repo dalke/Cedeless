@@ -371,6 +371,13 @@ template {
   font-display: auto;
   src: url("/assets/fonts/triplicate_a_code_regular.woff2") format("woff2");
 }
+@font-face {
+  font-family: InterVariable;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/fonts/InterVariable.woff2") format("woff2");
+}
 body {
   font-feature-settings: "kern";
   text-rendering: optimizeLegibility;
@@ -388,17 +395,24 @@ body {
 .light .front a:hover {
   color: #f1f5f9;
 }
-.light .post-body blockquote, .light .post-body div.highlight, .light .post-body code {
+.light .post-body blockquote,
+.light .post-body div.highlight,
+.light .post-body code {
   background: #e2e8f0;
 }
-.light .post-body blockquote, .light .post-body div.highlight {
+.light .post-body blockquote,
+.light .post-body div.highlight {
   border-top: 1px solid #cbd5e1;
   border-bottom: 1px solid #cbd5e1;
 }
-.light .post-body a, .light .pagination a, .light .post-nav a {
+.light .post-body a,
+.light .pagination a,
+.light .post-nav a {
   color: #cc6324;
 }
-.light .post-body a:hover, .light .pagination a:hover, .light .post-nav a:hover {
+.light .post-body a:hover,
+.light .pagination a:hover,
+.light .post-nav a:hover {
   background: #cc6324;
   color: #f1f5f9;
 }
@@ -427,18 +441,25 @@ body {
 .dark .front .highlight {
   background: #475569;
 }
-.dark .post-body blockquote, .dark .post-body div.highlight, .dark .post-body code {
+.dark .post-body blockquote,
+.dark .post-body div.highlight,
+.dark .post-body code {
   background: #64748b;
   color: #f8fafc;
 }
-.dark .post-body blockquote, .dark .post-body div.highlight {
+.dark .post-body blockquote,
+.dark .post-body div.highlight {
   border-top: 1px solid #94a3b8;
   border-bottom: 1px solid #94a3b8;
 }
-.dark .post-body a, .dark .pagination a, .dark .post-nav a {
+.dark .post-body a,
+.dark .pagination a,
+.dark .post-nav a {
   color: #efc0a3;
 }
-.dark .post-body a:hover, .dark .pagination a:hover, .dark .post-nav a:hover {
+.dark .post-body a:hover,
+.dark .pagination a:hover,
+.dark .post-nav a:hover {
   background: #cc6324;
   color: #f1f5f9;
 }
@@ -631,7 +652,9 @@ article a {
   margin: 2rem 2rem 0 2rem;
   padding-top: 2rem;
 }
-.pagination .newer, .pagination .page-count, .pagination .older {
+.pagination .newer,
+.pagination .page-count,
+.pagination .older {
   width: 33%;
 }
 .pagination .newer {
@@ -658,23 +681,28 @@ article a {
   padding-top: 2rem;
 }
 
-.about, .shelf {
+.about,
+.shelf {
   display: flex;
   flex-direction: column;
 }
-.about h1, .shelf h1 {
+.about h1,
+.shelf h1 {
   font-family: "Valkyrie A Caps";
   font-feature-settings: "ss10";
   font-size: 2.5rem;
   line-height: 2rem;
   margin: 0;
 }
-.about a, .shelf a {
+.about a,
+.shelf a {
   color: inherit;
   text-decoration: none;
 }
 
-.blog-header, .about-header, .shelf-header {
+.blog-header,
+.about-header,
+.shelf-header {
   color: #f1f5f9;
   display: flex;
   gap: 1rem;
@@ -682,56 +710,79 @@ article a {
   padding: 2rem;
   margin: 2rem;
 }
-.blog-header h1, .about-header h1, .shelf-header h1 {
+.blog-header h1,
+.about-header h1,
+.shelf-header h1 {
   font-size: 2rem;
   line-height: 1.8rem;
 }
-.blog-header p, .about-header p, .shelf-header p {
+.blog-header p,
+.about-header p,
+.shelf-header p {
   font-family: "Valkyrie A";
   font-size: 1.2rem;
   font-style: italic;
   margin: 1rem 0 0 0;
 }
 
-article, .about-body, .shelf-body {
+article,
+.about-body,
+.shelf-body {
   font-family: "Valkyrie A";
   font-feature-settings: "ss01", "liga";
   font-size: clamp(16px, 3.7vw, 22px);
-  line-height: 1.4;
+  line-height: 1.5;
   padding: 0 2rem;
 }
 
-.post-body p, .post-body blockquote, .post-body li, .about-body p, .about-body blockquote, .about-body li {
+.post-body p,
+.post-body blockquote,
+.post-body li,
+.about-body p,
+.about-body blockquote,
+.about-body li {
   margin: 0 0 1rem 0;
 }
-.post-body :last-child, .about-body :last-child {
+.post-body :last-child,
+.about-body :last-child {
   margin-bottom: 0;
 }
-.post-body :last-child li:last-of-type, .about-body :last-child li:last-of-type {
+.post-body :last-child li:last-of-type,
+.about-body :last-child li:last-of-type {
   margin-bottom: 0;
 }
-.post-body ol, .post-body ul, .about-body ol, .about-body ul {
+.post-body ol,
+.post-body ul,
+.about-body ol,
+.about-body ul {
   padding-left: 2rem;
 }
-.post-body a, .about-body a {
+.post-body a,
+.about-body a {
   text-decoration: none;
   transition: all 150ms linear;
 }
-.post-body pre, .post-body code, .about-body pre, .about-body code {
+.post-body pre,
+.post-body code,
+.about-body pre,
+.about-body code {
   font-family: "Triplicate A Code";
   font-feature-settings: "ss01" 0, "ss02" 1;
   font-size: 90%;
 }
-.post-body pre, .about-body pre {
+.post-body pre,
+.about-body pre {
   margin: 0;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-.post-body pre code, .about-body pre code {
+.post-body pre code,
+.about-body pre code {
   background: none;
   white-space: pre-wrap;
 }
-.post-body code, .about-body code {
+.post-body code,
+.about-body code {
   padding: 0.1rem;
   white-space: nowrap;
 }
@@ -802,8 +853,7 @@ article, .about-body, .shelf-body {
 }
 
 .shelf-body {
-  padding: 0 2rem 2rem 2rem;
-  gap: 2rem;
+  padding: 0;
 }
 .shelf-body a {
   padding: 0;
@@ -815,18 +865,14 @@ article, .about-body, .shelf-body {
 .shelf-intro {
   font-size: 1.2em;
   margin: 0;
-  padding: 0;
+  padding: 0 2rem;
 }
 
-.non-table p {
-  margin: 0.5rem 0 0;
+.non-table summary {
+  align-items: start;
 }
-.non-table h2 {
-  font-size: 1.3em;
-}
-.non-table .total {
-  padding-top: 1rem;
-  margin-top: 2rem;
+.non-table .game-status {
+  margin-top: 0.5rem;
 }
 
 .game {
@@ -835,57 +881,24 @@ article, .about-body, .shelf-body {
   margin-top: 2rem;
 }
 
-.closed .game-notes {
-  display: none;
-}
-.closed .icon {
-  transform: rotate(0deg);
-  transition: all 150ms linear;
-}
-
-.open .game-notes {
-  display: block;
-}
-.open .icon {
-  transform: rotate(90deg);
-  transition: all 150ms linear;
-}
-.open ul {
-  padding-left: 2rem;
-  margin: 0.5rem 0 1rem;
-}
-
-a {
-  color: inherit;
-}
-
 .cell-game {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.name {
-  display: inline;
+.game-name {
+  font-family: InterVariable;
   font-size: 1.3em;
+  font-weight: 700;
   line-height: 1.1;
-  padding: 0 3px;
-  margin: 0 0 0 -3px;
+  margin: 0 2rem 0 0;
+  text-wrap: balance;
 }
 
-.toggle {
-  cursor: pointer;
-}
-.toggle:hover .name {
-  background: #c2410c;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  color: #fff7ed;
-  transition: all 150ms linear;
-}
-.toggle:hover .icon {
-  filter: invert(26%) sepia(60%) saturate(2235%) hue-rotate(357deg) brightness(101%) contrast(95%);
-  transition: all 150ms linear;
+.game-date {
+  font-size: 0.8em;
+  margin: 0;
 }
 
 .icon {
@@ -898,54 +911,111 @@ a {
 }
 
 .badge {
-  border-radius: 0.25rem;
+  border-radius: 2px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
-  font-family: "Valkyrie A Caps";
-  font-feature-settings: "smcp" 1, "c2sc" 1, "ss01" 1;
-  font-weight: bold;
+  font-family: InterVariable;
+  font-size: 0.8em;
+  font-weight: 700;
   padding: 0.25rem 0.4rem;
   text-align: left;
+  text-transform: uppercase;
   vertical-align: baseline;
 }
 
-.status-backlog {
-  background: #0284c7;
+.game-status {
+  flex: none;
+  font-family: InterVariable;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0.2rem 0.4rem;
+  text-transform: uppercase;
+}
+
+.status-01 {
+  background: #cbd5e1;
+  color: #334155;
+}
+
+.status-02 {
+  background: #0369a1;
   color: #f0f9ff;
 }
 
-.status-coming-soon {
-  background: #d97706;
+.status-03 {
+  background: #b45309;
   color: #fffbeb;
 }
 
-.status-done {
-  background: #475569;
+.status-04 {
+  background: #64748b;
   color: #f8fafc;
 }
 
-.status-in-progress {
-  background: #65a30d;
-  color: #f7fee7;
+.status-06 {
+  background: #fda4af;
+  color: #334155;
 }
 
-.status-never-going-to-play {
-  background: #e11d48;
-  color: #fff1f2;
-}
-
-.status-to-investigate {
-  background: #9333ea;
+.status-07 {
+  background: #7e22ce;
   color: #faf5ff;
 }
 
-.status-abandoned {
-  background: #0d9488;
-  color: #f0fdfa;
+.status-09 {
+  background: #4d7c0f;
+  color: #f7fee7;
+}
+
+.platform-024 {
+  background: #15803d;
+  color: #f0fdf4;
 }
 
 .total {
   border-top: 4px solid #94a3b8;
+}
+
+details {
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 1rem 2rem;
+}
+details:hover {
+  background: #475569;
+}
+
+details:first-of-type {
+  border-top: 3px solid #64748b;
+  margin-top: 2rem;
+}
+
+details + details {
+  border-top: 1px solid #64748b;
+}
+
+summary {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-primary-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.game-secondary-info {
+  flex-shrink: 0;
+}
+
+.game-date {
+  font-family: InterVariable;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .util-hidden {
@@ -972,7 +1042,8 @@ a {
     table-layout: auto;
     width: 100%;
   }
-  .shelf th, .shelf td {
+  .shelf th,
+  .shelf td {
     border: 1px solid;
     padding: 1rem;
     vertical-align: top;
@@ -995,7 +1066,8 @@ a {
   }
 }
 @media (min-width: 768px) {
-  article, .about-body {
+  article,
+  .about-body {
     width: clamp(300px, 40rem, 650px);
   }
   .shelf-body {
@@ -1003,12 +1075,16 @@ a {
   }
 }
 @media (min-width: 1024px) {
-  .blog, .about, .shelf {
+  .blog,
+  .about,
+  .shelf {
     align-items: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .blog-header, .about-header, .shelf-header {
+  .blog-header,
+  .about-header,
+  .shelf-header {
     flex: initial;
     margin: 2rem 0 0 2rem;
     padding: 2rem;
@@ -1018,7 +1094,10 @@ a {
     margin: 0;
     padding: 0;
   }
-  article, .post-list, .about-body, .shelf-body {
+  article,
+  .post-list,
+  .about-body,
+  .shelf-body {
     padding: 2rem;
   }
   .pagination {

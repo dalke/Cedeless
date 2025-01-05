@@ -1,5 +1,6 @@
 ---
 title: "Zelda Project: Link to the Past"
+date: 2023-04-11 00:00:00 -5
 ---
 
 <span class="lead-in">Game:</span> The Legend of Zelda: A Link to the Past (1991)

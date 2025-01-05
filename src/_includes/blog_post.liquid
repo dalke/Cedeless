@@ -2,10 +2,13 @@
 layout: blog
 ---
 
+{% assign olderPost = collections.posts | getPreviousCollectionItem %}
+{% assign newerPost = collections.posts | getNextCollectionItem %}
+
 <article>
   <header class="post-header">
     <div class="post-date">
-      {{ dateEt | date: '%B %e, %Y' }}
+      {{ page.date | date: '%B %e, %Y' }}
     </div>
     <h2>{{ title }}</h2>
   </header>
@@ -14,40 +17,18 @@ layout: blog
   </div>
 </article>
 
-{% for post in site.posts %}
-  {% if post.url == page.url %}
-    {% assign currentIndex = forloop.index0 %}
-    {% assign olderIndex = currentIndex | plus: 1 %}
-    {% assign newerIndex = currentIndex | minus: 1 %}
-    {% assign articleIndexLength = forloop.length | minus: 1 %}
-    
-    {% if currentIndex == articleIndexLength %}
-      {% assign newerPost = site.posts[newerIndex] %}
-    {% endif %}
-    
-    {% if currentIndex < articleIndexLength and currentIndex != 0 %}
-      {% assign newerPost = site.posts[newerIndex] %}
-      {% assign olderPost = site.posts[olderIndex] %}
-    {% endif %}
-    
-    {% if currentIndex == 0 %}
-      {% assign olderPost = site.posts[olderIndex] %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-
-{% if newerPost != null or olderPost != null %}
+{% if olderPost or newerPost %}
   <div class="post-nav">  
-    {% if newerPost != null %}
+    {% if newerPost %}
       <div>
-        <span class="lead-in">Newer:</span> <a href="{{ newerPost.url }}">{{ newerPost.title }}</a>
+        <span class="lead-in">Newer:</span> <a href="{{ newerPost.url }}">{{ newerPost.data.title }}</a>
       </div>
     {% endif %}
     
     
-    {% if olderPost != null %}
+    {% if olderPost %}
       <div>
-        <span class="lead-in">Older:</span> <a href="{{ olderPost.url }}">{{ olderPost.title }}</a>
+        <span class="lead-in">Older:</span> <a href="{{ olderPost.url }}">{{ olderPost.data.title }}</a>
       </div>
     {% endif %}
   </div>

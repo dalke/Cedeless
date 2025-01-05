@@ -1,5 +1,6 @@
 ---
 title: "Zelda Project: Tears of the Kingdom"
+date: 2023-08-12 00:00:00 -5
 ---
 
 <span class="lead-in">Game:</span> The Legend of Zelda: Tears of the Kingdom (2023)

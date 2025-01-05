@@ -1,5 +1,6 @@
 ---
 title: "Zelda Project: Legend of Zelda"
+date: 2023-03-12 00:00:00 -5
 ---
 
 <span class="lead-in">Game:</span> The Legend of Zelda (1986)

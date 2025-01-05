@@ -1,0 +1,36 @@
+{
+  "statuses": [
+    {
+      "status_id": "status_01",
+      "text": "Abandoned"
+    },
+    {
+      "status_id": "status_02",
+      "text": "Backlog"
+    },
+    {
+      "status_id": "status_03",
+      "text": "Coming soon"
+    },
+    {
+      "status_id": "status_04",
+      "text": "Done"
+    },
+    {
+      "status_id": "status_06",
+      "text": "Will not play"
+    },
+    {
+      "status_id": "status_07",
+      "text": "To investigate"
+    },
+    {
+      "status_id": "status_08",
+      "text": "Wishlist"
+    },
+    {
+      "status_id": "status_09",
+      "text": "In progress"
+    }
+  ]
+}

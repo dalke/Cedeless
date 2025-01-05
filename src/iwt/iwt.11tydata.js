@@ -1,15 +1,9 @@
 const { DateTime } = require("luxon");
 
 module.exports = {
-  layout: "blog_post.liquid",
+  layout: "blog_post",
   page_class: "blog",
   tags: ["posts"],
-  eleventyComputed: {
-    dateEt: ({ page }) =>
-      DateTime.fromJSDate(page.date, { zone: "utc" }).setZone(
-        "America/New_York",
-        { keepLocalTime: true }
-      ),
-  },
-  permalink: "iwt/{{ title | slugify }}/index.html",
+  permalink:
+    "iwt/{{ page.date | date: '%Y/%m/%d' }}/{{ title | slugify }}/index.html",
 };

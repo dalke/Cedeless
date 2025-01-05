@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Cedeless</title>
+    
+      <script src="/assets/js/theme_write.js"></script>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#cc6324">
+     
+    <link rel='stylesheet' href="/css/cedeless.css">
+  </head> 
+  <body class="about">
+    
+<header class="about-header">
+  <div>
+    <h1>About <br>Cedeless</h1>
+  </div>
+</header>
+<main class="about-body">
+  <p>Cedeless is the personal project site of Reuben Dalke. That’s me. Hi.</p>
+<p>This isn’t a <a href="https://reubendalke.com/resume/">résumé site</a>, but it exists in public largely to demonstrate my ability to build web pages. If I didn’t need to appeal to potential employers, all this stuff would be running on <code>localhost</code>.</p>
+<h2>Who do you think you are, <a href="https://achewood.com/2004/02/18/title.html">putting on such airs</a>?</h2>
+<p>I’m a human who appreciates video games, peanut butter, and websites that let the back button do its job. I like watching ice hockey, but it stresses me out. I go for long walks, during which I concoct new things to worry about and try to let go of old ones. I like to read, mainly fiction.</p>
+<p>I don’t do social media, so this is where I exist online. If you want to talk, you can <a href="mailto:mail@cedeless.com">send me email</a>.</p>
+<h2>OK, but ‘cedeless’?</h2>
+<p>As origin stories go, this one is pedestrian: I bought a bag of seedless lemons once that was labeled in both English and French. I saw the C in <em>citrons</em> out of the corner of my eye and thought for a moment they’d somehow misspelled “seedless”. “Ceedless” led to “cedeless”, and within an hour I was registering a domain name.</p>
+<p>I like this kind of homonym play. It’s not <em>funny</em>, exactly, but I think it’s fun. “Cedeless” doesn’t really mean anything.</p>
+<p>Except…</p>
+<p>I do think “cede less” kind of describes my approach to personal projects. I don’t like shortcuts. I don’t like frameworks. I want to make things myself, without relying too much on someone else’s work.</p>
+<p>I’m not writing my own web server, and I’m unlikely to, say, fell a tree myself for a woodworking project. I’m not inventing the universe so I can make an apple pie. But, when practical, I’m going to roll my own stuff rather than implement someone else’s. I want to cede less control of my projects to platforms, services, and packages.</p>
+<h2>What is Infinite, Worthless Time?</h2>
+<p><a href="/iwt/">Infinite, Worthless Time</a> is a blog. There’s not a ton I want to share with the internet, but what I do have is there.</p>
+<p>Blogs and content sites are good personal web development projects, because they encourage you to build a system that can gracefully handle arbitrary input. Did you handle the case where a post starts with a <code>ul</code>? Does your pagination scheme make sense when there are only five posts? It’s more interesting than a static brochure site, even if the content is <a href="/iwt/2023/11/29/avalanche-numbers/">less than profound</a>.</p>
+<h2>What is Shelf?</h2>
+<p><a href="/shelf/">Shelf</a> is a tool for keeping track of my video game library. I have an Airtable base that performs this function admirably, but I wanted to try my hand at creating something on my own.</p>
+<p>Shelf is a simple table with <a href="https://github.com/dalke/Cedeless/blob/main/shelf.html">a surprising degree of underlying complexity</a>. I have plans to make it more than that, but progress is slow.</p>
+<p>Keeping track of my games is something <a href="shelf/">I think about a lot</a>.</p>
+<h2>So did Copilot make all this or what?</h2>
+<p>Nope. I did not use any large-language-model tools in the development of this site, at least not directly or intentionally.</p>
+<h2>A colophon of sorts</h2>
+<!-- TODO: Update below per migration to Eleventy -->
+<p>This site is powered by a local installation of <a href="https://jekyllrb.com/">Jekyll</a>. Jekyll parses Markdown, compiles Sass, processes control-flow blocks, and produces a directory of HTML, CSS, and JS files that I basically just FTP to a server.</p>
+<p>I’m using Matthew Butterick’s <a href="https://mbtype.com/fonts/valkyrie/">Valkyrie</a> and <a href="https://mbtype.com/fonts/triplicate/">Triplicate</a> typefaces.</p>
+<p>Colors are derived from <a href="https://www.presentandcorrect.com/blogs/blog/rams-palette">these Dieter Rams palettes</a> collected by Chad Ashley.</p>
+<h2>Theme control</h2>
+<p>By default, this site will match your operating system’s theme. You can override that behavior here. The setting is stored in your browser’s local storage.</p>
+<div class="theme-control">
+  <fieldset>
+    <legend>Select a color theme</legend>
+    <button class="theme-control-light" type="button">
+      <input id="theme-select-light" type="radio" name="theme-select" value="theme-select-light">
+      <label for="theme-select-light">
+        Light
+      </label>
+    </button>
+    <button class="theme-control-dark" type="button">
+      <input id="theme-select-dark" type="radio" name="theme-select" value="theme-select-dark">
+      <label for="theme-select-dark">
+        Dark
+      </label>
+    </button>
+    <button class="theme-control-system" type="button">
+      <input id="theme-select-system" type="radio" name="theme-select" value="theme-select-system">
+      <label for="theme-select-system">
+        System
+      </label>
+    </button>
+  </fieldset>
+</div>
+
+</main>
+<footer>
+  <ul>
+  
+  
+    <li>
+      <a href="/">
+        Home
+      </a>
+    </li>
+  
+  
+    
+      <li>
+        <a class="nav-shelf" href="/shelf/">
+          Shelf
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a class="nav-iwt" href="/iwt/">
+          IWT
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a class="nav-about nav-active" href="/about/">
+          About
+        </a>
+      </li>
+    
+  
+</ul>
+</footer>
+  </body>
+</html>

@@ -3,16 +3,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    {% if url == "/about/" %}
+    {% if page.url == "/about/" %}
       <script src="/assets/js/theme_write.js"></script>
     {% else %}
       <script src="/assets/js/theme_read.js"></script>
     {% endif %}
-    {% if page_class == "shelf" %}
-      <script src="/assets/js/shelf_toggle.js"></script>
-    {% endif %}
     {% include '_favicon' %}
-    {% if page_class == "blog" %}
+    {% if page.page_class == "blog" %}
       {% comment %} {% feed_meta %} {% endcomment %}
     {% endif %} 
     <link rel='stylesheet' href="/css/cedeless.css">

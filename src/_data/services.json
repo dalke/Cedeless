@@ -1,0 +1,52 @@
+{
+  "services": [
+    {
+      "service_id": "service_001",
+      "text": "Apple Arcade"
+    },
+    {
+      "service_id": "service_002",
+      "text": "Battle.net"
+    },
+    {
+      "service_id": "service_003",
+      "text": "EA"
+    },
+    {
+      "service_id": "service_004",
+      "text": "Epic Games Store"
+    },
+    {
+      "service_id": "service_005",
+      "text": "GOG"
+    },
+    {
+      "service_id": "service_006",
+      "text": "Humble"
+    },
+    {
+      "service_id": "service_007",
+      "text": "Itch"
+    },
+    {
+      "service_id": "service_008",
+      "text": "PS+"
+    },
+    {
+      "service_id": "service_009",
+      "text": "Steam"
+    },
+    {
+      "service_id": "service_010",
+      "text": "Windows Store"
+    },
+    {
+      "service_id": "service_011",
+      "text": "Game Pass"
+    },
+    {
+      "service_id": "service_012",
+      "text": "Games with Gold"
+    }
+  ]
+}

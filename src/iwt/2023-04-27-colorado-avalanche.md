@@ -1,5 +1,6 @@
 ---
 title: The 2022–23 Colorado Avalanche
+date: 2023-04-27 00:00:00 -5
 ---
 
 I'm writing this the day after the Colorado Avalanche lost Game 5 of their first-round playoff series against the Seattle Kraken, and the day before they face elimination in Game 6.

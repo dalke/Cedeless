@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelf Settings</title>
+    
+      <script src="/assets/js/theme_read.js"></script>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#cc6324">
+     
+    <link rel='stylesheet' href="/css/cedeless.css">
+  </head> 
+  <body class="">
+    
+<header class="shelf-header">
+  <div>
+    <h1>Shelf Settings</h1>
+    <p>A giant list of video games</p>
+  </div>
+</header>
+<main class="shelf-body">
+  
+<form onsubmit="store_keys()" id="keys">
+  <label for="gbApiKey">
+    Giant Bomb API key
+  </label>
+  <input type="text" id="gbApiKey" name="gbApiKey" required size="50">
+  <label for="airtableToken">
+    Airtable Personal Access Token
+  </label>
+  <input type="text" id="airtableToken" name="airtableToken" required size="50">
+  <label for="airtableBase">
+    Airtable base
+  </label>
+  <input type="text" id="airtableBase" name="airtableBase" required size="50">
+  <button type="submit" name="submit" value="Submit">Submit</button>
+</form>
+
+<script>
+  function ready(fn) {
+    if (document.readyState !== 'loading') {
+      fn();
+      return;
+    }
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+  
+  inputs = document.querySelectorAll('input[type="text"]');
+  keysForm = document.forms['keys'];
+  storedKeys = Object.keys(localStorage);
+    
+  ready(function() {
+    if (localStorage.gbApiKey) {
+      keysForm.elements["gbApiKey"].value = localStorage.gbApiKey;
+      keysForm.elements["gbApiKey"].disabled = true;
+    }
+    if (localStorage.airtableToken) {
+      keysForm.elements["airtableToken"].value = localStorage.airtableToken;
+      keysForm.elements["airtableToken"].disabled = true;
+    }
+    if (localStorage.airtableBase) {
+      keysForm.elements["airtableBase"].value = localStorage.airtableBase;
+      keysForm.elements["airtableBase"].disabled = true;
+    }
+    if (localStorage.gbApiKey, localStorage.airtableToken, localStorage.airtableBase) {
+      keysForm.elements["submit"].disabled = true;
+    }
+  });
+
+  function store_keys(){    
+    inputs.forEach((element) => {
+      const inputId = element.getAttribute("id");
+      const inputValue = element.value;
+      localStorage.setItem(inputId, inputValue);
+    });
+  };
+</script>
+</main>
+<footer>
+  <ul>
+  
+  
+    <li>
+      <a href="/">
+        Home
+      </a>
+    </li>
+  
+  
+    
+      <li>
+        <a class="nav-shelf nav-active" href="/shelf/">
+          Shelf
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a class="nav-iwt" href="/iwt/">
+          IWT
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a class="nav-about" href="/about/">
+          About
+        </a>
+      </li>
+    
+  
+</ul>
+</footer>
+  </body>
+</html>

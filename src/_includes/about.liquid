@@ -1,0 +1,13 @@
+---
+layout: base
+---
+
+<header class="about-header">
+  <div>
+    <h1>{{ title | replace: " ", " <br>"}}</h1>
+  </div>
+</header>
+<main class="about-body">
+  {{ content }}
+</main>
+{% include '_footer' %}

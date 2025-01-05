@@ -1,0 +1,116 @@
+{
+  "platforms": [
+    {
+      "platform_id": "platform_001",
+      "text": "3DS"
+    },
+    {
+      "platform_id": "platform_002",
+      "text": "Browser"
+    },
+    {
+      "platform_id": "platform_003",
+      "text": "Dreamcast"
+    },
+    {
+      "platform_id": "platform_004",
+      "text": "DS"
+    },
+    {
+      "platform_id": "platform_005",
+      "text": "Gamecube"
+    },
+    {
+      "platform_id": "platform_006",
+      "text": "GBA"
+    },
+    {
+      "platform_id": "platform_007",
+      "text": "GBC"
+    },
+    {
+      "platform_id": "platform_008",
+      "text": "Genesis"
+    },
+    {
+      "platform_id": "platform_009",
+      "text": "iOS"
+    },
+    {
+      "platform_id": "platform_010",
+      "text": "N64"
+    },
+    {
+      "platform_id": "platform_011",
+      "text": "PC"
+    },
+    {
+      "platform_id": "platform_012",
+      "text": "PS1"
+    },
+    {
+      "platform_id": "platform_013",
+      "text": "PS2"
+    },
+    {
+      "platform_id": "platform_014",
+      "text": "PS3"
+    },
+    {
+      "platform_id": "platform_015",
+      "text": "PS4"
+    },
+    {
+      "platform_id": "platform_016",
+      "text": "PS5"
+    },
+    {
+      "platform_id": "platform_017",
+      "text": "PSP"
+    },
+    {
+      "platform_id": "platform_018",
+      "text": "SNES"
+    },
+    {
+      "platform_id": "platform_019",
+      "text": "SNES Classic"
+    },
+    {
+      "platform_id": "platform_020",
+      "text": "Switch"
+    },
+    {
+      "platform_id": "platform_021",
+      "text": "Wii"
+    },
+    {
+      "platform_id": "platform_022",
+      "text": "Wii U"
+    },
+    {
+      "platform_id": "platform_023",
+      "text": "Xbox"
+    },
+    {
+      "platform_id": "platform_024",
+      "text": "Xbox 360"
+    },
+    {
+      "platform_id": "platform_025",
+      "text": "Xbox One"
+    },
+    {
+      "platform_id": "platform_026",
+      "text": "Xbox Series"
+    },
+    {
+      "platform_id": "platform_027",
+      "text": "Playdate"
+    },
+    {
+      "platform_id": "platform_028",
+      "text": "NES"
+    }
+  ]
+}

@@ -74,3 +74,12 @@
   font-display: auto;
   src: url('/assets/fonts/triplicate_a_code_regular.woff2') format('woff2');
 }
+
+// Inter
+@font-face {
+  font-family: InterVariable;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/assets/fonts/InterVariable.woff2') format('woff2');
+}

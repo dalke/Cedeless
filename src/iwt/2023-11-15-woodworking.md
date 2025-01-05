@@ -1,5 +1,6 @@
 ---
 title: Woodworking
+date: 2023-11-15 00:00:00 -5
 ---
 
 I set a goal for myself to take three woodworking classes in 2023, and I ended up taking six. I made two bowls, a platter, a bottle stopper, a desk shelf, an end table, and a small cabinet.
