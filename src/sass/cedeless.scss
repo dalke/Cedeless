@@ -26,16 +26,28 @@ body {
     }
   }
   .post-body {
+<<<<<<< HEAD
     blockquote,
+=======
+>>>>>>> main
     div.highlight,
     code {
       background: colors.$color-slate-200;
     }
+<<<<<<< HEAD
     blockquote,
+=======
+>>>>>>> main
     div.highlight {
       border-top: 1px solid colors.$color-slate-300;
       border-bottom: 1px solid colors.$color-slate-300;
     }
+<<<<<<< HEAD
+=======
+    blockquote {
+      border-left: 3px solid colors.$color-slate-300;
+    }
+>>>>>>> main
   }
   .post-body a,
   .pagination a,
@@ -79,17 +91,29 @@ body {
     }
   }
   .post-body {
+<<<<<<< HEAD
     blockquote,
+=======
+>>>>>>> main
     div.highlight,
     code {
       background: colors.$color-slate-500;
       color: colors.$color-slate-50;
     }
+<<<<<<< HEAD
     blockquote,
+=======
+>>>>>>> main
     div.highlight {
       border-top: 1px solid colors.$color-slate-400;
       border-bottom: 1px solid colors.$color-slate-400;
     }
+<<<<<<< HEAD
+=======
+    blockquote {
+      border-left: 3px solid colors.$color-slate-400;
+    }
+>>>>>>> main
   }
   .post-body a,
   .pagination a,
@@ -274,8 +298,14 @@ article {
     margin: 2rem 0 0.5rem 0;
   }
   blockquote {
+<<<<<<< HEAD
     padding: 2rem;
     font-size: 90%;
+=======
+    font-size: 90%;
+    margin: 2rem;
+    padding-left: 1rem;
+>>>>>>> main
   }
   div.highlight {
     margin: 0 0 1rem 0;
