@@ -53,10 +53,4 @@ This site is powered by a local installation of [Jekyll](https://jekyllrb.com/).
 
 I'm using Matthew Butterick's [Valkyrie](https://mbtype.com/fonts/valkyrie/) and [Triplicate](https://mbtype.com/fonts/triplicate/) typefaces.
 
-Colors are derived from [these Dieter Rams palettes](https://www.presentandcorrect.com/blogs/blog/rams-palette) collected by Chad Ashley.
-
-## Theme control
-
-By default, this site will match your operating system's theme. You can override that behavior here. The setting is stored in your browser's local storage.
-
-{% include '_theme_control' %}
+Some colors are derived from [these Dieter Rams palettes](https://www.presentandcorrect.com/blogs/blog/rams-palette) collected by Chad Ashley.
