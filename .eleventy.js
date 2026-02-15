@@ -1,4 +1,3 @@
-const sass = require("sass");
 const yaml = require("js-yaml");
 const markdownIt = require("markdown-it");
 
