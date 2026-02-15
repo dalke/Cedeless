@@ -1,19 +1,20 @@
 ---
-title: Infinite, Worthless Time
 layout: base
+title: Infinite, Worthless Time
+description: Notes from a temporary retirement
 page_class: blog
 permalink: "iwt/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 pagination:
-  data: collections.posts
-  size: 10
+  data: collections.post
+  size: 20
   alias: posts
   reverse: true
 ---
 
 <header class="blog-header">
   <div>
-    <h1>Infinite, <br />Worthless <br />Time</h1>
-    <p>Notes from a temporary retirement</p>
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
   </div>
 </header>
 <main class="post-list">
@@ -26,9 +27,11 @@ pagination:
       </header>
     </a>
   </article>
-  {% endfor %} {% comment %} Show pagination controls if total number of posts
-  exceeds number of posts to show per page as defined in front matter above {%
-  endcomment %} {% if pagination.href.previous or pagination.href.next %}
+  {% endfor %}
+  {% comment %}
+    Show pagination controls if total number of posts exceeds number of posts to show per page as defined in front matter above
+  {% endcomment %}
+  {% if pagination.href.previous or pagination.href.next %}
   <div class="pagination">
     <div class="newer">
       {% if pagination.href.previous %}

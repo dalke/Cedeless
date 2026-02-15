@@ -1,0 +1,7 @@
+{
+  "layout": "blog_post",
+  "templateEngineOverride": "md,liquid",
+  "page_class": "blog",
+  "tags": "post",
+  "permalink": "iwt/{{ page.date | date: '%Y/%m/%d' }}/{{ title | slugify }}/index.html"
+}
